@@ -1,0 +1,15 @@
+body * {
+    height: 200px;
+    width: 200px;
+    border: solid 2px black;
+    margin: 20px;
+}
+div:first-child {
+    background: linear-gradient(45deg, blue, green, red);
+}
+div:nth-child(2) {
+    background: linear-gradient(110deg, purple 75%, yellow);
+}
+p {
+    background: linear-gradient(rgba(255,255,255,0.5),rgba(0,0,0,0.50));
+}
