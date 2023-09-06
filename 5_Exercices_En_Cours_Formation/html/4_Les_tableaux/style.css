@@ -1,0 +1,59 @@
+body {
+    background: linear-gradient(top to bottom #dddddd, #eeeeee);
+}
+table {
+    margin: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+#tableau1 th {
+    background: aqua;
+}
+#tableau1 tr * {
+    border: solid 2px black;
+    border-collapse: separate;
+}
+#tableau1 a {
+    border: none;
+}
+#tableau1 {
+    border: double 5px fuchsia;
+    border-collapse: collapse;
+    text-align: center;
+}
+#tableau1 caption {
+    color: fuchsia;
+    font-weight: bold;
+}
+#tableau2 caption {
+    font-weight: bold;
+    color: rgb(0, 117, 117);
+    margin-bottom:1vw ;
+}
+#tableau2 tr * {
+    border: dotted 2px crimson;
+}
+#tableau2 tr *[rowspan] {
+    border: solid 3px blueviolet;
+}
+#tableau2 {
+    background: radial-gradient();
+    text-align: center;
+    border-collapse: collapse;
+    border: dashed 3px yellowgreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+td,th{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+h1 {
+    padding: 2vw;
+    margin: auto;
+    font-family: Comic sans ms;
+    width: fit-content;
+    text-align: center;
+    border: dotted 2px darkmagenta;
+}
