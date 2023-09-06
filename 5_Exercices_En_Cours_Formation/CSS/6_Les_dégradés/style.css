@@ -1,8 +1,12 @@
+body {
+    padding: 0;
+}
 body * {
     height: 200px;
     width: 200px;
     border: solid 2px black;
     margin: 20px;
+    display: inline-block;
 }
 div:first-child {
     background: linear-gradient(45deg, blue, green, red);
@@ -11,5 +15,15 @@ div:nth-child(2) {
     background: linear-gradient(-70deg, yellow , purple 25%);
 }
 p {
+    display: block;
     background: linear-gradient(rgba(255,255,255,0.5),rgba(0,0,0,0.50));
+}
+div:nth-child(4){
+    background: radial-gradient(circle at center, rgb(0, 174, 255) , pink 75%);
+}
+div:nth-child(5) {
+    background: repeating-radial-gradient(10px, black , white );
+}
+div:nth-child(5):hover {
+    background: repeating-radial-gradient(10px, white , black );
 }
