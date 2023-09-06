@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div {
+    margin: 5px;
+}
+body {
+    margin: 1%;
+}
+h1 {
+    color: red;
+}
+#contenu {
+    background-color: gainsboro;   
+    font-size: 1em; 
+}
+a {
+    padding-top: 20px;
+    color: green;
+}
+#contenu + div {
+    text-align: right;
+    font-size: 2em;
+}
+img {
+    max-width:10% ;
+}

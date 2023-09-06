@@ -1,0 +1,30 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 2em;
+}
+h3 {
+    color: blue;
+    font-size: 1,5em;
+}
+p {
+    background-color: gray;
+}
+strong {
+    font-weight: normal;
+    color: yellowgreen;
+}
+em {
+    font-style: normal;
+    text-decoration:underline;
+    font-size: 1,5em;
+    color: orange;
+}
+#dernier {
+    background-color: pink;
+}
+#article2 h3{
+    color: green;
+    text-align: right;
+    text-decoration: underline;
+}
