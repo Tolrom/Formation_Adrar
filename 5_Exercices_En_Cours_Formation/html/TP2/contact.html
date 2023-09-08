@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div role="banner"></div>
+        <h1>Bienvenue chez moi !</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                    <a href="galery.html">Gallerie</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <form action="contact.php" method="post" id="contact">
+            <fieldset>
+                <legend>Contactez-nous</legend>
+                <div>
+                    <label for="name" class="required">Nom</label>
+                    <input type="text" name="name" id="name" minlength="2" maxlength="20" placeholder="Dupont" required>    
+                </div>
+                <div>
+                    <label for="mail" class="required">Mail</label>
+                    <input type="email" name="mail" id="mail" required placeholder="antoine.dupont@gmail.com">
+                </div>
+                <div>
+                    <label for="com">Votre message</label>
+                    <br>
+                    <textarea name="com" id="com" cols="70" rows="10" placeholder="Écrivez-nous votre message ici, nous tâcherons de vous répondre au plus vite"></textarea>
+                </div>
+                <div>
+                    <input type="checkbox" name="send" id="send" checked>
+                    <label for="send">Envoyer une copie par email!</label>
+                </div>
+                <div>
+                    <button type="submit" form="contact" value="submit">Submit</button>
+                    <button type="reset" form="contact" value="reset">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <footer>
+        <ul>
+            <li>
+                <a href="#">Clique ici</a>
+            </li>
+            <li>
+                <a href="#">Clique ici</a>
+            </li>
+            <li>
+                <a href="#">Clique ici</a>
+            </li>
+            <li>
+                <a href="#">Clique ici</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

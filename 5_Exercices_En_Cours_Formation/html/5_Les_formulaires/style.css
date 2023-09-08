@@ -1,0 +1,21 @@
+form * {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+label {
+    display: block;
+}
+input {
+    display: block;
+}
+[type=checkbox] {
+    margin: 0;
+}
+fieldset:nth-child(2) * {
+    display: inline;
+    margin: 0;
+}
+fieldset:nth-child(3) * {
+    display: inline;
+    margin: 0;
+}

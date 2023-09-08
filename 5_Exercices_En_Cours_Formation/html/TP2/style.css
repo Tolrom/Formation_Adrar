@@ -1,0 +1,117 @@
+html {
+    min-height: 100%;
+    background: radial-gradient(circle at top, #ccdae0, #edf2f4);
+}
+body {
+    max-height: 100%;
+    margin-top: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+header {
+    text-align: center;
+}
+header div:first-child {
+    top: 0;
+    margin: auto;
+    margin-top: 0;
+    background-image: url(images/banner.jpg);
+    width: 800px;
+    height: 200px;
+}
+h1 {
+    color: #ef233c;
+    font-size: larger;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h3 {
+    color: #2b2d42;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: dotted underline;
+}
+article {
+    border: solid 1px black;
+}
+article div img {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 100px;
+    border: solid 2px #8d99ae;
+    border-collapse: collapse;
+}
+footer {
+    text-align: right;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: #d90429;
+}
+a:visited {
+    color: grey;
+}
+a:hover {
+    color: #2b2d42;
+}
+.required:after {
+    content: "*";
+    color: red;
+}
+.carrousel {
+    width: 800px;
+    height: 25vw;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.menu {
+    position: absolute;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    bottom: 0;
+}
+.menu label {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+.menu label:hover, 
+.menu label:focus {
+    background: #d90429;
+}
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    padding: 8em 1em 0;
+    background-size: cover;
+    background-position: 75% 50%;
+    transition: left 0s 0.75s;
+}
+[id^="slide"]:checked + .slide {
+    left: 0;
+    z-index: 100;
+    transition: left 0.65s ease-out;
+}
+.slide-1 {
+    background-image: url(images/supercar1.jpg);
+}
+.slide-2 {
+    background-image: url(images/supercar2.jpg);
+}
+.slide-3 {
+    background-image: url(images/supercar3.jpg);
+}

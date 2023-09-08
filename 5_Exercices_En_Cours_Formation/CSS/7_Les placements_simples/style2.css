@@ -1,0 +1,55 @@
+fieldset {
+    height: 250px;
+    width: 400px;
+    border: solid 2px black;
+    background-color: lightgray;
+}
+fieldset * {
+    margin: 5px;
+    padding: auto;
+}
+h1,
+form div:last-child {
+    text-align: center;
+}
+form div:first-child,
+form div:nth-child(2),
+form div:nth-child(3) input {
+    margin-left: 30px;
+}
+form div:first-child input,
+form div:nth-child(2) input {
+    margin-left: 20px;
+}
+[type="checkbox"] {
+    margin-right: 10px;
+}
+button {
+    margin-top: 20px;
+    padding: 5px;
+    background-color: #fff;
+}
+button:hover {
+    filter: invert(100%);
+}
+fieldset {
+    margin: 35px;
+}
+fieldset:last-child {
+    font-family: Helvetica;
+    background-image: radial-gradient(circle at center, rgb(54, 181, 255), rgb(61, 152, 255));
+}
+fieldset:last-child button {
+    background-color: rgb(0, 94, 94);
+    color: rgb(156, 232, 255);
+}
+fieldset:last-child button:hover {
+    filter: invert(100%);
+}
+fieldset:last-child input:nth-child(2){
+    right: 0;
+    left: auto;
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+}
