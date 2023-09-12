@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+}
+div {
+    border: solid 2px blue;
+    border-radius: 30px;
+}
+p {
+    padding: 5px;
+    margin: 10px;
+}
+form {
+    width: 75%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+form input {
+    flex: auto;
+    border-radius: 10px;
+}
+form label {
+    margin-left: 5px;
+    margin-right: 5px;
+    align-self: center;
+}
+#users {
+    padding: 10px;
+    align-self: center;
+    order: -1;
+    justify-content: flex-start;
+}
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+#chat {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    order: -1;
+    justify-self: flex-start;
+}
+p:first-child {
+    grid-column: 1;
+    grid-row: 1;
+}
+p:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: lightgray;
+}
+p:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+p:nth-child(4) {
+    grid-column: 2;
+    grid-row: 4;
+    background-color: lightgray;
+}
+p:nth-child(5) {
+    grid-column: 1;
+    grid-row: 5;
+}
+p:nth-child(6) {
+    grid-column: 2;
+    grid-row: 6;
+    background-color: lightgray;
+}
