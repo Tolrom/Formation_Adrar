@@ -1,12 +1,53 @@
+header {
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+    display: flex;
+    background-color: lightgray;
+    flex-direction: column;
+    justify-content: stretch;
+}
 section {
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-items: center;
 }
 article {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    text-align: center;
+    background-color: #fff;
+    border: solid 2px black;
+    align-items: center;
+    border-collapse: collapse;
+    margin: 1vh;
+    padding: 1vh;
+    justify-content: stretch;
 }
-
-
-@media only screen and (max-width: 1024px)
+article img {
+    width: auto;
+}
+footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+footer button {
+    background-color: black;
+    color: #fff;
+    padding: 0.5%;
+}
+@media only screen and (max-width: 1024px) {
+header {
+    display: flex;
+}
+header img {
+    width: 100%;
+}
+section {
+    flex-direction: column;
+    justify-content: space-between;
+}
+}
