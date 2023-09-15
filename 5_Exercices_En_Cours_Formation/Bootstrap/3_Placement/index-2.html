@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container bg-info text-center card my-5">
+        Premier niveau avec 12 colonnes
+        <div class="row">
+            <div class="container bg-warning card col-8 align-self-start">
+            Second niveau avec 8 colonnes
+                <div class="row">
+                    <div class="h-100 bg-danger col-4 card">
+                    Troisième niveau avec 4 colonnes
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="container card col-6">
+                    Troisième niveau avec 6 colonnes
+                        <div class="row container-fluid">
+                            <div class="card container col-3 bg-info">
+                            Quatrième niveau avec 3 colonnes
+                            </div>
+                            <div class="h-50 card container col-5 bg-warning">
+                            Quatrième niveau avec 5 colonnes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-100 container bg-danger card text-center col-4">
+                Second niveau avec 4 colonnes
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
