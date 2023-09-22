@@ -1131,3 +1131,184 @@ faceRight();
 longueur = 150;
 forward(longueur);
 */
+
+/*
+// D7
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceUp();
+changeColor(color.fuchsia);
+let longueur;
+
+// Réalisation
+longueur = 50;
+forward(longueur);
+right(90);
+forward(longueur);
+left(90);
+longueur = 100;
+for(let i = 0 ; i < 2 ; i++) {
+    forward(longueur);
+    left(90);
+}
+longueur = 50;
+forward(longueur);
+*/
+
+/*
+// D8
+// Initialisation
+setPos(250,250);
+setLineWidth(10);
+faceRight();
+changeColor(color.yellow);
+let longueur;
+let i;
+let j;
+
+// Réalisation
+longueur = 100;
+for(i = 0 ; i < 2 ; i++) {
+    forward(longueur);
+    right(90);
+}
+longueur = 50;
+for(j = 0 ; j < 2 ; j++) {
+    forward(longueur);
+    right(90);
+    forward(longueur);
+    left(90);
+}
+*/
+
+/*
+// D9
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.blue);
+let longueur;
+let i;
+
+// Réalisation
+longueur = 50;
+for(i = 0 ; i < 6 ; i++) {
+    forward(longueur);
+    right(120);
+    longueur += 50;
+}
+*/
+
+/*
+// D10
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.yellow);
+let longueur;
+let i;
+
+// Réalisation
+longueur = 50;
+for(i = 0 ; i < 10 ; i++) {
+    forward(longueur);
+    right(90);
+    longueur += 25;
+}
+*/
+
+/*
+// D11
+// Initialisation
+setPos(50,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.white);
+let longueur;
+let i;
+let j;
+
+// Réalisation
+longueur = 125;
+for(i = 0 ; i < 5 ; i++) {
+    for(j = 0 ; j < 3 ; j++) {
+        forward(longueur);
+        left(120);
+    }
+    forward(longueur);
+    longueur += -25;
+}
+*/
+
+/*
+// D12
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.aqua);
+let longueur;
+let i;
+let j;
+
+// Réalisation
+longueur = 50;
+for(i = 0 ; i < 6 ; i++) {
+    for(j = 0 ; j < 4 ; j++) {
+        forward(longueur);
+        left(120);
+    }
+    right(60);
+    longueur += 25;
+}
+*/
+
+/*
+// D12
+// Initialisation
+setPos(350,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.fuchsia);
+let rayon;
+let i;
+
+// Réalisation
+rayon = 50;
+for(i = 0 ; i < 8 ; i++) {
+    arcRight(rayon,180);
+    up();
+    forward(50);
+    down();
+    rayon += 25;
+}
+*/
+
+/*
+// D13
+// Initialisation
+setPos(100,300);
+setLineWidth(10);
+faceRight();
+left(45);
+changeColor(color.green);
+let longueur;
+let i;
+let j;
+
+// Réalisation
+for(i = 0 ; i < 2 ; i++) {
+    longueur = 25;
+    for(j = 0 ; j < 4 ; j++) {
+        forward(longueur);
+        right(90);
+        forward(longueur);
+        left(90);
+        longueur += 25;
+    }
+    right(180);
+}
+*/
