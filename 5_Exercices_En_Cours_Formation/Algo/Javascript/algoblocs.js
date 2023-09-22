@@ -1267,7 +1267,7 @@ for(i = 0 ; i < 6 ; i++) {
 */
 
 /*
-// D12
+// D13
 // Initialisation
 setPos(350,300);
 setLineWidth(10);
@@ -1288,7 +1288,7 @@ for(i = 0 ; i < 8 ; i++) {
 */
 
 /*
-// D13
+// D14
 // Initialisation
 setPos(100,300);
 setLineWidth(10);
@@ -1312,3 +1312,36 @@ for(i = 0 ; i < 2 ; i++) {
     right(180);
 }
 */
+
+
+/*
+// D15
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceDown();
+changeColor(color.red);
+let angle;
+let longueur;
+let i;
+
+// Réalisation
+angle = 90;
+longueur = 50;
+for(i = 0 ; i < 10 ; i++) {
+    forward(longueur);
+    left(angle);
+    longueur += 10;
+    angle += -5;
+}
+*/
+
+
+// D16
+// Initialisation
+setPos(300,275);
+setLineWidth(10);
+faceRight();
+changeColor(color.green);
+let rayon;
+let i;
