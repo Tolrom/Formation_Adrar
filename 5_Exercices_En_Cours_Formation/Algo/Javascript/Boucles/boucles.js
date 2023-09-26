@@ -317,7 +317,7 @@ for(let i = 0 ; i < 10 ; i++) {
 // Exercice 19 : compter combien il y a de nombres multiples de 3 ou de 7 entre 1234 et 5678
 console.log("Exercice 19");
 let tatluser = 0;
-for(let i = 1234 ; i < 5678 ; i++){
+for(let i = 1234 ; i < 5679 ; i++){
     if (i%3 == 0 || i%7 == 0) {
         tatluser++;
     }
