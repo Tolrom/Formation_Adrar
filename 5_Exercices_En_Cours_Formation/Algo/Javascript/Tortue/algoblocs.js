@@ -1336,12 +1336,270 @@ for(i = 0 ; i < 10 ; i++) {
 }
 */
 
-
+/*
 // D16
 // Initialisation
 setPos(300,275);
 setLineWidth(10);
+faceDown();
+changeColor(color.green);
+let rayon = 50;
+let i = 0;
+let j = 0;
+
+// Réalisation
+forward(100);
+right(120);
+forward(50);
+faceLeft();
+for(; i < 3 ; i++) {
+    forward(50);
+    right(90);
+}
+faceUp();
+right(60);
+forward(50);
+faceRight();
+up();
+forward(50);
+changeColor(color.yellow);
+down();
+for(; j < 3 ; j++) {
+    arcRight(rayon,180);
+    up();
+    faceUp();
+    forward(rayon*2 + 50);
+    rayon += 50;
+    down();
+    faceRight();
+}
+*/
+
+/*
+// E01
+// Initialisation
+setPos(100,275);
+setLineWidth(10);
+faceRight();
+changeColor(color.yellow);
+function etoile() {
+    for(let l = 0 ; l < 5 ; l++) {
+        forward(75);
+        right(144);
+    }
+}
+
+// Réalisation
+for(let i = 0 ; i < 2 ; i++) {
+    etoile();
+    forward(100);
+}
+forward(100);
+changeColor(color.green);
+etoile();
+*/
+
+/*
+// E02
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.blue);
+function aile() {
+    forward(200);
+    for(let i = 0 ; i < 2 ; i++) {
+        right(120);
+        forward(100);
+    }
+    left(60);
+    forward(100);
+}
+
+// Réalisation
+for(let i = 0 ; i < 2 ; i++) {
+    aile();
+}
+right(90);
+changeColor(color.red);
+for(let j = 0 ; j < 2 ; j++) {
+    aile();
+}
+*/
+
+/*
+// E03
+// Initialisation
+setPos(275,325);
+setLineWidth(10);
+faceRight();
+changeColor(color.yellow);
+function carre() {
+    for(let i = 0 ; i < 4 ; i++) {
+        forward(50);
+        left(90);
+    }
+}
+
+// Réalisation 
+for(let j = 0 ; j < 6 ; j++) {
+    carre();
+    forward(100);
+    left(60);
+}
+*/
+
+/* 
+// E04
+// Initialisation
+setPos(0,500);
+setLineWidth(10);
+faceRight();
+changeColor(color.red);
+function marches() {
+    for(let i = 0 ; i < 2 ; i++) {
+        forward(60);
+        left(90);
+        forward(60);
+        right(90);
+    }
+}
+
+// Réalisation
+marches();
+changeColor(color.yellow);
+forward(120);
+changeColor(color.aqua);
+marches();
+changeColor(color.green);
+marches();
+forward(120);
+*/
+
+/*
+// E05
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceDown();
+changeColor(color.aqua);
+function dessinDeL() {
+    forward(100);
+    left(90);
+    forward(50);
+}
+
+// Réalisation
+dessinDeL();
+changeColor(color.green);
+dessinDeL();
+changeColor(color.yellow);
+dessinDeL();
+changeColor(color.fuchsia);
+right(90);
+dessinDeL();
+*/
+
+/*
+// E06
+// Initialisation
+setPos(100,250);
+setLineWidth(10);
 faceRight();
 changeColor(color.green);
-let rayon;
-let i;
+function triangle() {
+    for(let i = 0 ; i < 3 ; i++) {
+    forward(100);
+    right(120);
+    }
+    forward(100);
+}
+
+// Réalisation 
+triangle();
+changeColor(color.fuchsia);
+triangle();
+faceDown();
+up();
+forward(50);
+down();
+changeColor(color.yellow);
+left(120);
+triangle();
+*/
+
+/*
+// E07
+// Initialisation
+setPos(75,325);
+setLineWidth(10);
+faceRight();
+changeColor(color.red);
+function motif() {
+    down();
+    for(let i = 0 ; i < 2 ; i++) {
+        forward(50);
+        left(45);
+        forward(100);
+        left(135);
+    }
+    up();
+}
+
+// Réalisation
+for(let j = 0 ; j < 2 ; j++) {    
+    motif();
+    forward(100);
+}
+changeColor(color.aqua);
+for(let k = 0 ; k < 3 ; k++) {
+    motif();
+    forward(50);
+}
+*/
+
+/*
+// E08
+// Initialisation
+setPos(75,300);
+setLineWidth(10);
+faceRight();
+changeColor(color.red);
+function triangles() {
+    for(let i = 0 ; i < 3 ; i++) {
+        forward(50);
+        right(120);
+    }
+    for(let j = 0 ; j < 3 ; j++) {
+        forward(100);
+        left(120);
+    }
+}
+
+// Réalisation 
+triangles();
+forward(100);
+changeColor(color.aqua);
+triangles();
+forward(100);
+faceDown();
+changeColor(color.yellow);
+triangles();
+*/
+
+
+// E09
+// Initialisation
+setPos(0,325);
+setLineWidth(10);
+faceRight();
+changeColor(color.fuchsia);
+function maison() {
+    forward(100);
+    right(45);
+    forward(50);
+    right(90);
+
+}
+
+// Réalisation
