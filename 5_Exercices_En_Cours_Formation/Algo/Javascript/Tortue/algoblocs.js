@@ -1587,7 +1587,7 @@ changeColor(color.yellow);
 triangles();
 */
 
-
+/*
 // E09
 // Initialisation
 setPos(0,325);
@@ -1595,11 +1595,154 @@ setLineWidth(10);
 faceRight();
 changeColor(color.fuchsia);
 function maison() {
-    forward(100);
+    forward(120);
     right(45);
-    forward(50);
+    forward(60);
     right(90);
-
+    forward(60);
+    right(45);
+    forward(120);
+    left(90);
+    forward(60);
 }
 
 // Réalisation
+for(let i = 0 ; i < 2 ; i++) {
+    forward(60);
+    faceUp();
+    maison();
+}
+faceUp();
+changeColor(color.green);
+maison();
+forward(60);
+*/
+
+/*
+// E10
+// Initialisation
+setPos(150,375);
+setLineWidth(10);
+faceRight();
+shiftColor(0.0);
+function croix() {
+    down();
+    for(let i = 0 ; i < 4 ; i++) {
+        for(let j = 0 ; j < 2 ; j++) {
+            forward(25);
+            right(90);
+        }
+        forward(25);
+        left(90);
+    }
+    up();
+}
+
+// Réalisation
+for(let i = 0 ; i < 3 ; i++) {
+    for(let j = 0 ; j < 2 ; j++) {
+        croix();
+        forward(100);
+        faceUp();
+    }
+    faceRight();
+    shiftColor(0.3);
+}
+*/
+
+/*
+// E11
+// Initialisation
+setPos(300,300);
+setLineWidth(10);
+faceRight();
+shiftColor(0.75);
+function forme() {
+    forward(100);
+    right(60);
+    forward(50);
+    right(60);
+    forward(50);300
+}
+
+// Réalisation
+for(let i = 0 ; i < 3 ; i++) {
+    down();
+    forme();
+    up();
+    forward(50);
+    shiftColor(-0.1);
+}
+faceUp();
+forward(100);
+down();
+for(let j = 0 ; j < 3 ; j++) {
+    forme();
+}
+*/
+
+/*
+// E12
+// Initialisation
+setPos(100,250);
+setLineWidth(10);
+faceRight();
+shiftColor(0.60);
+function carres() {
+    let longueur = 50;
+    for(let i = 0 ; i < 3 ; i++) {
+        for(let j = 0 ; j < 4 ; j++) {
+            forward(longueur);
+            arcLeft(50,90);
+        }
+    longueur += 25;
+    }
+}
+
+// Réalisation
+carres();
+up();
+faceDown();
+forward(100);
+shiftColor(0.25);
+down();
+carres();
+up();
+faceRight();
+forward(250);
+shiftColor(0.25);
+down();
+carres();
+*/
+
+
+                                    // DEFIS //
+
+// LA POKEBALL
+// Initialisation
+setPos(300,300);
+setLineWidth(1);
+faceRight();
+changeColor(color.red);
+
+// Réalisation
+for(let i = 0 ; i < 180 ; i++) {
+    forward(150);
+    backward(150);
+    left(1);
+}
+changeColor(color.white);
+for(let j = 0 ; j < 180 ; j++) {
+    forward(150);
+    backward(150);
+    left(1);
+}
+changeColor(color.black);
+for(let k = 0 ; k < 180 ; k++) {
+    forward(50);
+    backward(50);
+    left(2);
+}
+setLineWidth(20);
+forward(150);
+backward(300);
