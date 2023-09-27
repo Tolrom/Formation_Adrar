@@ -1717,7 +1717,8 @@ carres();
 
 
                                     // DEFIS //
-
+                                 
+/*
 // LA POKEBALL
 // Initialisation
 setPos(300,300);
@@ -1746,3 +1747,23 @@ for(let k = 0 ; k < 180 ; k++) {
 setLineWidth(20);
 forward(150);
 backward(300);
+*/
+
+/*
+// ÉTOILE BICOLORE
+// Initialisation
+setPos(175,350);
+setLineWidth(10);
+faceRight();
+changeColor(color.red);
+
+// Réalisation
+for(let i = 0 ; i < 4 ; i++) {
+    forward(250);
+    left(135);
+    changeColor(color.aqua);
+    forward(250);
+    left(135);
+    changeColor(color.red);
+}
+*/
