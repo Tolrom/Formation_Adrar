@@ -27,7 +27,7 @@ let canvas = document.getElementById('myDrawing');
 if (canvas && canvas.getContext) { // does the browser support 'canvas'?
 	turtle.ct = canvas.getContext("2d"); // get drawing context
 	turtle.ct.fillStyle = "#888888";
-	turtle.ct.fillRect(0,0,600,600);
+	turtle.ct.fillRect(0,0,1500,600);
 } else {
 	alert('You need a browser which supports the HTML5 canvas!');
 }
