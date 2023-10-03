@@ -62,13 +62,16 @@ console.log(tabMax([150,120,130]));
 
 // [Plus difficile - bonus] Écrire une fonction qui prend en entrée un tableau de nombres positifs et qui retourne la deuxième plus grande valeur du tableau.
 
-/*
 function tabMax2(tab){
-    let max = tab[0];
-    let max2 = tab[0];
-    for(let i = 1 ; i < tab.length ; i++) {
+    let max = 0;
+    let max2 = 0;
+    for(let i = 0 ; i < tab.length ; i++) {
         if (tab[i] > max){
+            max2 = max;
             max = tab[i];
+        }
+        else if (tab[i] > max2) {
+            max2 = tab[i];
         }
     }
     return max2;
@@ -78,7 +81,6 @@ console.log("Le deuxième maximum");
 console.log(tabMax2(tab2));
 console.log(tabMax2([15,12,13]));
 console.log(tabMax2([150,120,130]));
-*/
 
 // Écrire une fonction qui prend en entrée un tableau et un nombre et qui retourne le nombre de fois que ce nombre apparaît dans le tableau.
 
