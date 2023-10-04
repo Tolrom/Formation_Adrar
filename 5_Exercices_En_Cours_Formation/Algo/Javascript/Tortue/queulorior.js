@@ -1,0 +1,27 @@
+let str = "NNEESOOESEENNEEOOSEOSEEENNESENSSENNEESSOOEEENNEEOOSEOSEEENEENOOEESOOSEEEEEEENONSESENNSSENNEESSOOEEENNSSEENNSSEEENOONEEOOSEESEEEENNEESSOOEEENNEESOOEESENNESENSSEEENOONEEOOSEESEEEENNSSEEENNEESOOEESEEEENNEEOOSEOSEEENNEESSOOEEENNEESOOESEENNEEOOSEOSEEEENNOEEOSSEEEEENNEESOOEESOOEEENNEESOOESEENNSSEENNSSENNESNESSENNEEOOSEOSEEENNSSEENNSSEEENOONEEOOSEESENNEEOOSEOSEEEEEENNEESSOOEEENNEEOOSEOSEEENNESNESSENNEESOOEESENNSSENNESENSS";
+// let tab = str.split('');
+
+// Initialisation
+setPos(10,450);
+faceDown();
+setLineWidth(1);
+changeColor(color.red);
+
+for(let i = 0 ; i < str.length ; i++){
+    if(str[i] == "N"){
+        faceUp();
+        forward(10);
+    }
+    else if(str[i] == "E"){
+        faceRight();
+        forward(10);
+    }
+    else if(str[i] == "O"){
+        faceLeft();
+        forward(10);
+    }
+    else {
+        faceDown();
+        forward(10);
+    }
+}
