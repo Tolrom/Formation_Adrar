@@ -60,17 +60,29 @@ function nemee(dieu){
     return value;
 }
 
-function alpha(dieux){
-    let dieu = dieux.split(" "); 
-    let dieuxx = [];
+function alpha(entry){
+    let dieu = entry.split(" "); 
+    let dieux = [];
     for(let i = 0 ; i < dieu.length ; i++){
-        dieuxx.push([nemee(dieu[i]),dieu[i]]);
+        dieux.push([nemee(dieu[i]),dieu[i]]);
         // console.log( nemee(dieu[i]) + " " + dieu[i] );
     }
-    const byValue = (a,b) => a - b;
-    const sorted = dieuxx.sort(byValue);
-    console.log(sorted); // [1,1,2,3,5,8,13,21]
-    // console.log(dieuxx);
+    // console.log(dieux);
+    dieux.sort();
+    for(let i = 0 ; i < 4 ; i++){
+        dieux.push(dieux.shift());
+    }
+    for(let i = 0 ; i < dieux.length ; i++){
+        dieux[i].shift();
+    }
+    dieux.flat();
+    dieux = dieux.toString();
+    dieux = dieux.replaceAll(',',' ');
+    console.log(dieux);
 }
 
 alpha("ARTEMIS ASCLEPIOS ATHENA ATLAS CHARON CHIRON CRONOS DEMETER EOS ERIS EROS GAIA HADES HECATE HEPHAISTOS HERA HERMES HESTIA HYGIE LETO MAIA METIS MNEMOSYNE NYX OCEANOS OURANOS PAN PERSEPHONE POSEIDON RHADAMANTHE SELENE THEMIS THETIS TRITON ZEUS");
+
+// dieux = [ [x,y] , [x2,y2] , [x3,y3] ];
+// dieux[0] = [x,y];
+// dieux[0][0] = x
