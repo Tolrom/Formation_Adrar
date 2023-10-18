@@ -180,27 +180,146 @@ body.appendChild(canvas);
 body.appendChild(img);
 */
 
+
+
 // Q-Suite
 
-
+let memory = [];
 function Q(n){
     if(n <= 2){
         return 1;
     }
+    else if (memory[n] != undefined){
+        return memory[n];
+    }
     else {
-        return Q(n-Q(n-1))+Q(n-Q(n-2));
+        memory[n] = Q(n-Q(n-1))+Q(n-Q(n-2));
+        return memory[n];
     }
 }
-console.log(Q(10));
 
-// function Qsuite(i,j){
-//     let total = 0;
-//     let qi = Q(i);
-//     let qi2 = Q(i+1);
-//     for(let k = i ; k < j ; k++){
-//         total += qi;
-//     }
-//     return total;
-// }
+function Qsuite(i,j){
+    let total = 0;
+    for(let k = i ; k <= j ; k++){
+        total += Q(k);
+    }
+    return total;
+}
 
-// console.log(Qsuite(1583,1697));
+console.log(Qsuite(1583,1697));
+
+
+// Hen Llinge obfusqué
+
+function hen(str){
+    str = str.split('');
+    for (let i = 0 ; i < str.length ; i++){
+        if(str[i].toUpperCase() == str[i+1]){
+            str.splice(i, 2);
+            i = 0;
+        }
+    }
+    str = str.toString();
+    str = str.replaceAll(',','');
+    return str;
+}
+
+// console.log(hen(prompt('Saisir le code à déchiffrer')));
+
+// Piège numérique à Pokémons
+
+let piege = [];
+for(let i = 0 ; i < 1000 ; i++){
+    let j = i;
+    j = j.toString();
+    j = j.split('');
+    if(j.length < 3 ){
+        if(i%7 == 0 && (parseInt(j[0]) + parseInt(j[1])) == 11){
+            piege.push(i);
+        }
+    }
+    else {
+        if(i%7 == 0 && (parseInt(j[0]) + parseInt(j[1]) + parseInt(j[2])) == 11){
+            piege.push(i);
+        }
+    }
+}
+piege = piege.toString();
+console.log(piege);
+
+// Des lettres bien rangées
+
+/*
+function strNoAccent(a) {
+    a = a.normalize("NFD");
+    a = a.replace(/\p{Diacritic}/gu, "");
+    return a;
+}
+
+function alphabet(str){
+    let compteur = 0;
+    str = strNoAccent(str);
+    str = str.toLowerCase();
+    let mots = str.split("\r\n");
+    let boucles = 0;
+    for(let i = 0 ; i < mots.length ; i++){
+        let mot = mots[i].split('');
+        for(let j = 0 ; j < mot.length ; j++){
+            if(mot[j+1] == undefined){
+                if(mot.length > 2){
+                    compteur++;
+                }
+            }
+            if(mot[j] > mot[j+1]){      
+                break;
+            }
+            
+        }
+    }
+    console.log(boucles);
+    console.log(`Il y a ${compteur} mots dans l'ordre`);
+}
+alphabet(prompt('Rentre la liste de mots'));
+*/
+
+// Points fixes dans le temps
+
+function galli(z){
+    if(z == 0){
+        return 2;
+    }
+    if(z == 1 || z == 5){
+        return 3;
+    }
+    if(z == 2 || z == 6){
+        return 4;
+    }
+    if(z == 3 || z == 7){
+        return 5;
+    }
+    if(z == 4 || z == 8){
+        return 6;
+    }
+    if(z == 9){
+        return 7;
+    }
+}
+
+function fixes(x,y){
+    let annees = 0;
+    for(let i = x ; i < y+1 ; i++){
+        let total = 0;
+        let an = i.toString().split('');
+        console.log(an);
+        for(let j = 0 ; j < an.length ; j++){
+            total += galli(an[j]);
+        }
+        console.log(i, total, i%total);
+        if(i%total == 0){
+            annees++;
+        }
+    }
+    console.log(`Il y a ${annees} années avec un point temporel fixe entre ${x} et ${y}.`)
+}
+
+fixes(parseInt(prompt('Entrez la date de début')),parseInt(prompt('Entrez la date de fin')));

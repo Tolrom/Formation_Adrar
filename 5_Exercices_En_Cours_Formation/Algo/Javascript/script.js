@@ -141,6 +141,7 @@ function ttc(){
 
 // Exercice 9
 
+/*
 let users = [];
 for(let i = 0 ; i < 5 ; i++){
     let user = {
@@ -160,3 +161,110 @@ for(let i = 0 ; i < users.length ; i++){
     }
 }
 console.log(`La personne la plus jeune s'appelle ${users[minInd]['prénom'] + ' ' + users[minInd]['nom']}`);
+*/
+
+// Exercice 10
+
+/*
+let notes = 0;
+let effectif = 0;
+let eleves = [];
+for(let i = 0 ; i < 5 ; i++){
+    let eleve = {
+        'prenom': prompt('Saisir le prénom de l\'élève'),
+        'note'  : parseFloat(prompt('Saisir sa note'))
+    }
+    eleves.push(eleve);
+    notes += eleve.note;
+    effectif++;
+}
+let max = eleves[0]['note'];
+let maxInd;
+for (let i = 0 ; i < eleves.length ; i++){
+    if(eleves[i].note > max){
+        max = eleves[i].note;
+        maxInd = i;
+    }
+}
+console.log(`La moyenne de la classe est de ${notes/effectif}`);
+console.log(`${eleves[maxInd].prenom} a obtenu la meilleure moyenne avec ${eleves[maxInd].note}`);
+*/
+
+// Exercice 11
+
+/*
+let choco = parseInt(prompt('Saisir le nombre de chocolatines souhaité'));
+let prix = 0;
+for(let i = 0 ; i < choco ; i++){
+    if(i < 10){
+        prix += 1.4;
+    }
+    else if (i < 20){
+        prix += 1.3;
+    }
+    else {
+        prix += 1.2;
+    }
+}
+
+console.log(`Le coût total est de ${prix.toFixed(2)}€`);
+*/
+
+// Exercice 12
+
+/*
+let nb = Math.floor(100*Math.random());
+let reussite = 0;
+let essais;
+for(let i = 0 ; i < 10 ; i++){
+    let tenta = prompt('Tente un nombre');
+    if(tenta < nb){
+        alert('Eh non c\'est plus!');
+    }
+    else if(tenta > nb){
+        alert('Eh non c\'est moins!');
+    }
+    else if(tenta == nb){
+        reussite++;
+        essais = i;
+        break;
+    }
+}
+if(reussite == 1){
+    alert(`Bravo! Tu as trouvé le nombre en ${essais} essais`);
+}
+else {
+    alert('Tu es un mauvais mentaliste, change de métier!');
+}
+*/
+
+// Exercice 13
+
+let debanque;
+let dejoueur;
+let score = 0;
+let scorebanque = 0;
+for(let i = 0 ; i < 5 ; i++){
+    debanque = Math.floor(Math.random()*5)+1;
+    dejoueur = Math.floor(Math.random()*5)+1;
+    if(dejoueur > debanque){
+        score++;
+    }
+    if(dejoueur == debanque){
+        score += 2;
+    }
+    else {
+        scorebanque++;
+    }
+    console.log(debanque, dejoueur);
+}
+console.log(scorebanque, score);
+if (scorebanque > score){
+    console.log(`La banque gagne avec ${scorebanque} points!`);
+}
+else if (scorebanque == score){
+    console.log(`C'est une égalité avec ${score} points!`);
+}
+else {
+    console.log(`Le joueur gagne avec ${score} points!`);
+}
