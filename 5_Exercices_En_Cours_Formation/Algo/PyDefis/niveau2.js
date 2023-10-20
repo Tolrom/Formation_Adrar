@@ -249,13 +249,14 @@ console.log(piege);
 
 // Des lettres bien rangées
 
-/*
+
 function strNoAccent(a) {
     a = a.normalize("NFD");
     a = a.replace(/\p{Diacritic}/gu, "");
     return a;
 }
 
+/*
 function alphabet(str){
     let compteur = 0;
     str = strNoAccent(str);
@@ -314,6 +315,9 @@ function fixes(x,y){
         for(let j = 0 ; j < an.length ; j++){
             total += galli(an[j]);
         }
+        if(an.length > 1){
+            total -= (an.length-1);
+        }
         console.log(i, total, i%total);
         if(i%total == 0){
             annees++;
@@ -322,4 +326,39 @@ function fixes(x,y){
     console.log(`Il y a ${annees} années avec un point temporel fixe entre ${x} et ${y}.`)
 }
 
-fixes(parseInt(prompt('Entrez la date de début')),parseInt(prompt('Entrez la date de fin')));
+// fixes(parseInt(prompt('Entrez la date de début')),parseInt(prompt('Entrez la date de fin')));
+
+// Les noms ont de l'importance
+
+function findDuplicates(arr) {
+    const filtered = arr.filter((item, index) => arr.indexOf(item) !== index);
+    return filtered;
+}
+
+function noms(str){
+    str = str.toLowerCase();
+    let noms = str.split("\r\n");
+    console.log(noms);
+    let tri = [];
+    for(let i = 0 ; i < noms.length ; i++){
+        let nom = noms[i].split('');
+        nom.nom = noms[i];
+        nom.total = nom.length;
+        let dup = findDuplicates(nom);
+        nom.diff = nom.length - dup.length;
+        nom.ratio = (nom.diff/nom.total).toFixed(3);
+        tri.push(nom);
+    }
+    tri.sort(function (a, b) {
+        return a.ratio - b.ratio;
+    });
+    let trifinal = [];
+    tri.forEach((element) => {
+        trifinal.push(element.nom);
+    });
+    trifinal = trifinal.toString();
+    trifinal = trifinal.replaceAll(',',', ');
+    console.log(trifinal);
+}
+
+noms(prompt('Rentre la liste de mots'));
