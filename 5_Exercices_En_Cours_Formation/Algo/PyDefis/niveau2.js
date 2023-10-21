@@ -336,18 +336,21 @@ function findDuplicates(arr) {
 }
 
 function noms(str){
-    str = str.toLowerCase();
-    let noms = str.split("\r\n");
-    console.log(noms);
+    let noformat = str.toLowerCase();
+    noformat = noformat.replaceAll(' ','');
+    noformat = noformat.split('\r\n'); 
+    console.log(noformat);
+    let liste = str.split("\r\n");
+    console.log(liste);
     let tri = [];
-    for(let i = 0 ; i < noms.length ; i++){
-        let nom = noms[i].split('');
-        nom.nom = noms[i];
-        nom.total = nom.length;
-        let dup = findDuplicates(nom);
-        nom.diff = nom.length - dup.length;
-        nom.ratio = (nom.diff/nom.total).toFixed(3);
-        tri.push(nom);
+    for(let i = 0 ; i < liste.length ; i++){
+        let espece = noformat[i].split('');
+        espece.nom = liste[i];
+        espece.total = espece.length;
+        let dup = findDuplicates(espece);
+        espece.diff = espece.length - dup.length;
+        espece.ratio = (espece.diff/espece.total).toFixed(3);
+        tri.push(espece);
     }
     tri.sort(function (a, b) {
         return a.ratio - b.ratio;
@@ -356,8 +359,12 @@ function noms(str){
     tri.forEach((element) => {
         trifinal.push(element.nom);
     });
+    for(let i = 0 ; i < trifinal.length ; i++) {
+        trifinal[i] = trifinal[i][0].toUpperCase() + trifinal[i].slice(1);
+    }
     trifinal = trifinal.toString();
     trifinal = trifinal.replaceAll(',',', ');
+    console.log(tri);
     console.log(trifinal);
 }
 
