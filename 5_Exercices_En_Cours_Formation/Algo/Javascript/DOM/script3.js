@@ -3,7 +3,7 @@ function calculer(){
     let choco = document.querySelector("#quantite").value;
     let prix = 0;
     console.log(choco);
-    if(choco == undefined || choco == 0){
+    if(isNaN(choco) || choco == undefined || choco <= 0){
         resultat.textContent = "Veuillez choisir un nombre de chocolatine";
     }
     else {

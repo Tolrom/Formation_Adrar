@@ -89,7 +89,7 @@ console.log(konami('←↓↓↓↑←←AB←↓BBA→→↓↑↓B→→→←
 
 /*
 const body = document.querySelector("body"),
-    img = new Image(800,800);
+      img = new Image(800,800);
 img.src = "ciel.png";
 // img.setAttribute('crossOrigin', '');
 // img.crossOrigin = "Anonymous";
@@ -333,7 +333,7 @@ function fixes(x,y){
 function findDuplicates(arr) {
     const filtered = arr.filter((item, index) => arr.indexOf(item) !== index);
     return filtered;
-}
+};
 
 function noms(str){
     let noformat = str.toLowerCase();
@@ -351,7 +351,7 @@ function noms(str){
         espece.diff = espece.length - dup.length;
         espece.ratio = (espece.diff/espece.total).toFixed(3);
         tri.push(espece);
-    }
+    };
     tri.sort(function (a, b) {
         return a.ratio - b.ratio;
     });
@@ -361,11 +361,170 @@ function noms(str){
     });
     for(let i = 0 ; i < trifinal.length ; i++) {
         trifinal[i] = trifinal[i][0].toUpperCase() + trifinal[i].slice(1);
-    }
+    };
     trifinal = trifinal.toString();
     trifinal = trifinal.replaceAll(',',', ');
     console.log(tri);
     console.log(trifinal);
 }
 
-noms(prompt('Rentre la liste de mots'));
+// noms(prompt('Rentre la liste de mots'));
+
+// Sudokteur
+
+function sudok(str) {
+    str = str.replaceAll('\r\n','');
+    let grille = str.split('');
+    let zero = 0,
+        un = 0,
+        deux = 0,
+        trois = 0,
+        quatre = 0,
+        cinq = 0,
+        six = 0,
+        sept = 0,
+        huit = 0,
+        neuf = 0,
+        points = 0,
+        total = 0;
+    for(let i = 0 ; i < grille.length ; i++) {
+        if (grille[i] == 0){
+            zero++;
+        }
+        else if (grille[i] == 1){
+            un++;
+        }
+        else if (grille[i] == 2){
+            deux++;
+        }
+        else if (grille[i] == 3){
+            trois++;
+        }
+        else if (grille[i] == 4){
+            quatre++;
+        }
+        else if (grille[i] == 5){
+            cinq++;
+        }
+        else if (grille[i] == 6){
+            six++;
+        }
+        else if (grille[i] == 7){
+            sept++;
+        }
+        else if (grille[i] == 8){
+            huit++;
+        }
+        else if (grille[i] == 9){
+            neuf++;
+        }
+        else if (grille[i] == '.'){
+            points++;
+        }
+        total++;
+    }
+    console.log('Total :'+total+' Zeros :'+zero+' Un : '+un+' Deux :'+deux+' Trois :'+trois+' Quatre :'+quatre+' Cinq :'+cinq+' Six :'+six+' Sept :'+sept+' Huit :'+huit+' Neuf :'+neuf+' Points :'+points);
+
+};
+
+// sudok(prompt('Rentre la grille'));
+
+// Créatures nocturnes
+
+function creatures(x){
+    let bats = 0,
+        skell = 0,
+        zomb = 0,
+        ghost = 0,
+        lvl = 1;
+    for(let i = 0 ; i < (x*60)+1 ; i++){
+        if(i >= 2 && i%2 == 0){
+            bats += 10;
+        }
+        if(i >= 5 && i%5 == 0){
+            skell += 5;
+        }
+        if(i >= 6 && i%6 == 0){
+            zomb += 4;
+            bats -= 2*lvl;
+        }
+        if(i >= 10 && i%10 == 0){
+            ghost += 3;
+        }
+        if(i >= 20 && i%20 == 0){
+            skell -= lvl;
+        }
+        if(i >= 30 && i%30 == 0){
+            zomb -= lvl;
+        }
+        if(i >= 40 && i%40 == 0){
+            ghost -= lvl;
+        }
+        if(i >= 240 && i%240 == 0){
+            lvl++;
+        }
+    }
+    let populMobs = {
+        "Chauve-Souris" : bats,
+        "Skellingtons" : skell,
+        "Zombies" : zomb,
+        "Fantômes Baveux" : ghost
+    };
+    console.log(populMobs); 
+}
+
+// creatures(prompt('Combien de temps la partie va-t-elle durer? (En minutes)'))
+
+// Difficile de comprendre un lapin crétin
+
+function bwa(str){
+    str = str.replaceAll('\r\n','');
+    let regex = /BWA.A/gi
+    str = str.replaceAll(regex,'');
+    console.log(str);
+}
+
+// bwa(prompt('BWAAAAAAAA'));
+
+// Calcul des jours magiques
+
+function jour(j){
+    if((j%7)+1 == 1){
+        return 6;
+    }
+    if((j%7)+1 == 2 || (j%7)+1 == 5 || (j%7)+1 == 7){
+        return 8;
+    }
+    if((j%7)+1 == 3 || (j%7)+1 == 4 || (j%7)+1 == 6){
+        return 5;
+    }
+}
+
+function magie(){
+    let jmagiques = 0;
+    let j = 1;
+    let m = 1;
+    let y = 2000;
+    while(y != 2023 && m != 10 && j < 24){
+        if(m == 2){
+            if((y-2000)%4 == 0){
+                while(j <= 29){
+                    if((jour(j)+j)%10 == 0){
+                        jmagiques++;
+                    }
+                    j++;
+                }
+                m++;
+            }
+            else {
+                while(j <= 28){
+                    if((jour(j)+j)%10 == 0){
+                        jmagiques++;
+                    }
+                    j++;
+                }
+                m++;
+            }
+        }
+    }
+}
