@@ -35,7 +35,23 @@ function deleteTask(tache){
     tache.parentNode.remove();
 }
 
+let statut = true;
 function updateTask(tache){
-    const texte = document.querySelector('#task').value;
-    tache.parentNode.firstChild.textContent = texte;
+    const texte = tache.parentNode.firstChild,
+        updated = document.createElement('input');
+    updated.setAttribute('type', 'text');
+    updated.setAttribute('id', 'updated')
+    if(statut == true){
+        tache.parentNode.replaceChild(updated, texte);
+        statut = !statut;
+    }
+    else if(statut == false){
+        const task = document.createElement('p'),
+            newTask = document.querySelector('#updated').value,
+            update = document.querySelector('#updated');
+        console.log(tache.parentNode, task, update);
+        tache.parentNode.replaceChild(task, update);
+        task.textContent = newTask;
+        statut = !statut;
+    }
 }

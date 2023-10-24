@@ -488,7 +488,7 @@ function bwa(str){
 
 // Calcul des jours magiques
 
-function jour(j){
+function jourma(j){
     if((j%7)+1 == 1){
         return 6;
     }
@@ -500,31 +500,67 @@ function jour(j){
     }
 }
 
-function magie(){
-    let jmagiques = 0;
-    let j = 1;
-    let m = 1;
-    let y = 2000;
-    while(y != 2023 && m != 10 && j < 24){
-        if(m == 2){
+let jmagiques = 0;
+let jour = 1;
+let jourJ = 1;
+let mois = 1;
+let y = 2000;
+while(y <= 2023){
+    while(mois <= 12){
+        if(mois == 2){
             if((y-2000)%4 == 0){
-                while(j <= 29){
-                    if((jour(j)+j)%10 == 0){
+                while(jourJ <= 29){
+                    if((jourma(jour)+jourJ)%10 == 0){
                         jmagiques++;
                     }
-                    j++;
+                    jour++;
+                    jourJ++;
                 }
-                m++;
+                jourJ = 1;
+                mois++;
             }
             else {
-                while(j <= 28){
-                    if((jour(j)+j)%10 == 0){
+                while(jourJ <= 28){
+                    if((jourma(jour)+jourJ)%10 == 0){
                         jmagiques++;
                     }
-                    j++;
+                    jour++;
+                    jourJ++;
                 }
-                m++;
+                jourJ = 1;
+                mois++;
             }
         }
+        if(mois == 4 || mois == 6 || mois == 9 || mois == 11){
+            while(jourJ <= 30){
+                if((jourma(jour)+jourJ)%10 == 0){
+                    jmagiques++;
+                }
+                console.log(jour, jourJ, mois, y);
+                jour++;
+                jourJ++;
+            }
+            jourJ = 1;
+            mois++;
+        }
+        if(mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12){
+            while(jourJ <= 31){
+                if(y == 2023 && mois == 10 && jourJ == 24){
+                    console.log(`Il y a ${jmagiques} jours magiques dans cet intervalle`);
+                }
+                if(( jourma(jour) + jourJ)%10 == 0){
+                    jmagiques++;
+                }
+                console.log(jour, jourJ, mois, y);
+                jour++;
+                jourJ++;
+            }
+            jourJ = 1;
+            mois++;
+        }
     }
+    mois = 1;
+    y++;
 }
+    // console.log(`Il y a ${jmagiques} jours magiques dans cet intervalle`);
+
