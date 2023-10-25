@@ -564,3 +564,24 @@ while(y <= 2023){
 }
     // console.log(`Il y a ${jmagiques} jours magiques dans cet intervalle`);
 
+// Le cours de potions
+
+function potions(){
+    let fioles = [20, 20, 20, 0],
+        f = parseInt(prompt("Combien d'opérations de vidage?"));
+    for(let i = 0 ; i < f ; i++){
+        for(let j = 0 ; j < fioles.length ; j++){
+            if(25-fioles[1] < fioles[0]/3){
+                fioles[1] = 25;
+                fioles[0] -= fioles[0]/3 - (25-fioles[1]);
+            }
+            else {
+                fioles[1] += fioles[0]/3;
+                fioles[0] -= fioles[0]/3;
+            }
+            if(25-fioles[2] < fioles[0]/3){
+                
+            }
+        }
+    }
+}
