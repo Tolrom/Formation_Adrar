@@ -536,7 +536,7 @@ while(y <= 2023){
                 if((jourma(jour)+jourJ)%10 == 0){
                     jmagiques++;
                 }
-                console.log(jour, jourJ, mois, y);
+                // console.log(jour, jourJ, mois, y);
                 jour++;
                 jourJ++;
             }
@@ -551,7 +551,7 @@ while(y <= 2023){
                 if(( jourma(jour) + jourJ)%10 == 0){
                     jmagiques++;
                 }
-                console.log(jour, jourJ, mois, y);
+                // console.log(jour, jourJ, mois, y);
                 jour++;
                 jourJ++;
             }
@@ -562,26 +562,106 @@ while(y <= 2023){
     mois = 1;
     y++;
 }
-    // console.log(`Il y a ${jmagiques} jours magiques dans cet intervalle`);
 
 // Le cours de potions
 
-function potions(){
-    let fioles = [20, 20, 20, 0],
-        f = parseInt(prompt("Combien d'opérations de vidage?"));
+function potions(f){
+    let fioles = [20, 20, 20, 0];
     for(let i = 0 ; i < f ; i++){
         for(let j = 0 ; j < fioles.length ; j++){
-            if(25-fioles[1] < fioles[0]/3){
-                fioles[1] = 25;
-                fioles[0] -= fioles[0]/3 - (25-fioles[1]);
+            let tiers = Number((fioles[j]/3).toFixed(2));
+            if(25-fioles[(j+1)%4] < tiers){
+                fioles[j] -= (25-fioles[(j+1)%4]);
+                fioles[(j+1)%4] = 25;
             }
             else {
-                fioles[1] += fioles[0]/3;
-                fioles[0] -= fioles[0]/3;
+                fioles[(j+1)%4] += tiers;
+                fioles[j] -= tiers;
             }
-            if(25-fioles[2] < fioles[0]/3){
-                
+            tiers = Number((fioles[j]/3).toFixed(2));
+            if(25-fioles[(j+2)%4] < tiers){
+                fioles[j] -= (25-fioles[(j+2)%4]);
+                fioles[(j+2)%4] = 25;
+            }
+            else {
+                fioles[(j+2)%4] += tiers;
+                fioles[j] -= tiers;
+            }
+            tiers = Number((fioles[j]/3).toFixed(2));
+            if(25-fioles[(j+3)%4] < fioles[j]/3){
+                fioles[j] -= (25-fioles[(j+3)%4]);
+                fioles[(j+3)%4] = 25;
+            }
+            else {
+                fioles[(j+3)%4] += tiers;
+                fioles[j] -= tiers;
             }
         }
     }
+    for(let i = 0 ; i < fioles.length ; i++){
+        fioles[i] = Number(fioles[i].toFixed(2));
+    }
+    console.log(fioles);
 }
+
+// potions(parseInt(prompt("Combien d'opérations de vidage par fiole?")));
+
+// Les dragées surprises
+
+function dragee(){
+    let dragees = ['A', 'B', 'É', 'C', 'G', 'F', 'M', 'O', 'H', 'P', 'S', 'V'];
+    let compte = 0;
+    for(let i = 1 ; i < 1000 ; i++){
+        if(i%5 === 0){
+            let swap = dragees[(i-1)%12];
+            dragees[(i-1)%12] = dragees[(i-2)%12];
+            dragees[(i-2)%12] = swap;  
+            compte++; 
+        }
+        if((dragees[0] == 'A' || dragees[0] == 'É' || dragees[0] == 'G' || dragees[0] == 'H')
+            && (dragees[1] == 'A' || dragees[1] == 'É' || dragees[1] == 'G' || dragees[1] == 'H')
+            && (dragees[2] == 'A' || dragees[2] == 'É' || dragees[2] == 'G' || dragees[2] == 'H')
+            && (dragees[3] == 'A' || dragees[3] == 'É' || dragees[3] == 'G' || dragees[3] == 'H')
+        ){
+            return compte;
+        }
+    }
+}
+console.log(`Hermione devra procéder à ${dragee()} échanges pour réussir son tour de passe-passe`);
+
+// Paramétrage du vif d'or
+
+function vif(n){
+    let posIni = [0, 0, 1],
+        pos = [0, 1, 1],
+        comptePos = 2;
+    while(pos[0] != posIni[0] || pos[1] != posIni[1] || pos[2] != posIni[2]){
+        let z = (pos[0]+pos[1]+pos[2])%n;
+        pos[0] = pos[1];
+        pos[1] = pos[2];
+        pos[2] = z;
+        comptePos++;
+    }
+    return comptePos;
+}
+let traj = [];
+let vifdor = [];
+
+for (let i = 2 ; i < 200 ; i++){
+    traj.push([vif(i), i]);
+}
+
+traj = traj.sort((a, b) => {
+    return a[0] - b[0];
+  });
+
+traj = traj.slice(traj.length-10);
+
+traj.forEach((element) => {
+    element.shift();
+    vifdor.push(element.pop());
+})
+
+console.log(vifdor);
+
+// Entrée au ministère
