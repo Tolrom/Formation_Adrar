@@ -665,3 +665,28 @@ traj.forEach((element) => {
 console.log(vifdor);
 
 // Entrée au ministère
+
+function ministere(){
+    let nbrs = [];
+    let check = [0, 0, 0, 0, 0, ]
+    for(let i = 64225 , j = 0 ; j < 3 ; i++){
+        let carre = i*i;
+        carre = carre.toString();
+        carre = carre.split('');
+        for(let k = 0 ; k < carre.length ; k++){
+            if(carre[k] != 7 && carre[k] != 6 && carre[k] != 4 && carre[k] != 2 && carre[k] != 1){
+                k = carre.length;
+            }
+            else if(carre[k] == 0){
+
+            }
+            else if(k = carre.length-1){
+                nbrs.push(i);
+                j++;
+            }
+        }
+    }
+    return nbrs;
+}
+
+console.log(ministere());
