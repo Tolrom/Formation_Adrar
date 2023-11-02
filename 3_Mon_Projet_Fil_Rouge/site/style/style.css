@@ -1,0 +1,284 @@
+@font-face {
+    font-family: "True North";
+    src: url(../fonts/True-North.otf) format("opentype");
+}
+@font-face {
+    font-family: "Quando";
+    src: url(../fonts/Quando-Regular.ttf) format("truetype");
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Quando;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+}
+.bouton {
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background-color: #593500;
+    color: #96C11F;
+    text-decoration: none;
+    font-family: True North;
+    font-size: large;
+    width: fit-content;
+    align-self: center;
+}
+nav ul li{
+    list-style: none;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2 {
+    font-family: True North;
+    text-decoration: none;
+    color: #96C11F;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h1 {
+    color: #593500;
+    margin: 0;
+    font-size: xx-large;
+}
+h1 img  {
+    height: 0.75em;
+}
+footer {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #593500;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    font-size: x-small;
+    margin-top: 2em;
+}
+footer a {
+    color: #f39200;
+}
+.separateur {
+    margin: 3em;
+    background-color: white;
+    height: 2px;
+    width: 50%;
+}
+section {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+article {
+    display: inline;
+}
+p {
+    text-align: justify;
+    margin: 0 3vw;
+}
+section h2 {
+    margin-bottom: 1em;
+}
+.txtimg {
+    width: 40vw;
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+}
+.img1 {
+    background-image: url(../images/image1.jpg);
+    float: right;
+    margin: 3vw 0 3vw 3vw;
+}
+.img2 {
+    background-image: url(../images/image2.jpg);
+    float: left;
+    margin: 3vw 3vw 3vw 0;
+}
+
+/* VERSION MOBILE UNIQUEMENT */
+
+@media only screen and (max-width: 768px) {
+    /* Global */
+
+    nav {
+        display: flex;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        min-height: 100vh;
+        background-color: #96C11F;
+        text-align: left;
+        flex-direction: column;
+        overflow: hidden;
+        box-sizing: border-box;
+        justify-content: space-between;
+        transform: translateX(-60vw);
+        transition: transform 0.5s ease-in-out;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-self: center;
+        flex-grow: 6;
+        font-weight: bold;
+    }
+    nav ul li a {        
+        color: #593500;
+    }
+    nav ul li:last-child {
+        transform: translateY(-4vh);
+    }
+    nav .bouton {
+        margin-bottom: 2vh;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    #logo {
+        height: 15vw;
+        margin: 1.5vw 0;
+    }
+    .separateur {
+        height: 2px;
+        width: 80%;
+        background-color: #593500;
+        align-self: center;
+        margin: 0 -2vh;
+    }
+    #croixNav {
+        align-self: flex-end;
+        margin: 4vw 4vw 0 0;
+    }
+    #croixNav line {
+        stroke: #593500;
+    }
+    footer p {
+        text-align: center;
+    }
+    #shopLogo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 5vw;
+        padding: 1vh;
+        border-radius: 6px;
+        background-color: #593500;
+    }
+    #shopLogo img {
+        height: 6vh;
+    }
+    #shop {
+        height: 100vh;
+        width: 60vw;
+        position: fixed;
+        background-color: #96C11F;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(60vw);
+        transition: transform 0.5s ease-in-out;
+    }
+    #shop .bouton {
+        align-self: flex-start;
+        margin: 5vw;
+    }
+    #croixShop {
+        position: absolute;
+        top: 0;
+        margin: 4vw;
+    }
+    #croixShop line {
+        stroke: #593500;
+    }
+
+    /* Index */ 
+    
+    #indexHeader {
+        background-image: url(../images/header.jpg);
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 1em;
+        padding-bottom: 2em;
+    }
+    #burgerBox {
+        border-radius: 6px;
+        background: #593500;
+        width: 52px;
+        height: 36px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #burgerBox:active,
+    .bouton:active {
+        background-color: #96C11F;
+        color: #593500;
+    }
+    #burgerBox:active svg line {
+        color: #593500;
+        stroke: #593500;
+    }
+    #croixNav:active line,
+    #croixShop:active line,
+    nav ul li a:active {
+        stroke: white;
+        color: white;
+    }
+    #titre {
+        margin-bottom: 5vh;
+    }
+    
+    /* Page Paniers */
+    .panier {
+        font-family: "True North";
+        color: white;
+        stroke: #593500;
+    }
+    section .panier:nth-child(2) {
+        background-image: url(../images/panier1.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    section .panier:nth-child(3) {
+        background-image: url(../images/panier2.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    section .panier:nth-child(4)  {
+        background-image: url(../images/panier3.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    section .panier:nth-child(5)  {
+        background-image: url(../images/panier4jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
