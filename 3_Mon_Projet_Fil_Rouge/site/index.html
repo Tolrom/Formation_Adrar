@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Léguman</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <script src="./script/script.js" async></script>
 </head>
 <body>
     <!-- Bouton burger -->
-    <div id="burgerBox">
+    <div id="burgerBox" class="burgerBouton">
         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="25" viewBox="0 0 42 25" fill="none" id="burgerIndex">
             <line y1="1.5" x2="41.25" y2="1.5" stroke="#96C11F" stroke-width="3" />
             <line y1="12.5" x2="41.25" y2="12.5" stroke="#96C11F" stroke-width="3" />
@@ -17,7 +18,7 @@
         </svg>
     </div>
     <!-- La nav en burger -->
-    <nav>
+    <nav style="transform : translateX(-60vw)">
         <svg id="croixNav" xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
             <line x1="31.0607" y1="1.06066" x2="2.06066" y2="30.0607" stroke="black" stroke-width="3"/>
             <line y1="-1.5" x2="41.0122" y2="-1.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 3 0)" stroke="black" stroke-width="3"/>
@@ -34,11 +35,11 @@
         <a href="#" class="bouton">Connexion <br> Inscription</a>
     </nav>
     <!-- Le bouton de panier -->
-    <div id="shopLogo">
+    <div id="shopBouton" class="cartBouton">
         <img src="./images/shopColor.svg" alt="Logo de panier">
     </div>
     <!-- Le menu panier déroulant -->
-    <div id="shop">
+    <div id="shop" style="transform : translateX(60vw)">
         <svg id="croixShop" xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
             <line x1="31.0607" y1="1.06066" x2="2.06066" y2="30.0607" stroke="black" stroke-width="3"/>
             <line y1="-1.5" x2="41.0122" y2="-1.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 3 0)" stroke="black" stroke-width="3"/>
@@ -106,8 +107,8 @@
             </p>
         </article>
     </section>
-    <img src="" alt="">
-    <a href="#" class="bouton">En savoir plus</a>
+    <img src="./images/stand.jpg" alt="Une image du stand de Léguman au marché de Montesquieu-Volvestre">
+    <a href="./aboutUs.html" class="bouton">En savoir plus</a>
     <footer>
         <p>
             Vente directe aux particuliers sur site <br>

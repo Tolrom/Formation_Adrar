@@ -18,6 +18,11 @@ body {
     height: 100vh;
     width: 100%;
 }
+p {
+    text-align: justify;
+    margin: 0 7vw;
+    font-size: 14px;
+}
 .bouton {
     text-align: center;
     padding: 0.5em 1em;
@@ -47,6 +52,12 @@ h2 {
     font-weight: 400;
     line-height: normal;
 }
+h3 {
+    font-family: True North;
+    font-size: xx-large;
+    align-self: center;
+    margin-top: 2vh;
+}
 h1 {
     color: #593500;
     margin: 0;
@@ -66,32 +77,24 @@ footer {
     color: white;
     padding: 2em 0;
     text-align: center;
-    font-size: x-small;
-    margin-top: 2em;
+    margin-top: 5vh;
+}
+footer p {
+    font-size: small;
 }
 footer a {
     color: #f39200;
 }
-.separateur {
-    margin: 3em;
-    background-color: white;
-    height: 2px;
-    width: 50%;
-}
 section {
-    padding: 1em;
     display: flex;
     flex-direction: column;
 }
 article {
     display: inline;
 }
-p {
-    text-align: justify;
-    margin: 0 3vw;
-}
 section h2 {
-    margin-bottom: 1em;
+    margin: 1em 7vw;
+    font-size: 6vw;
 }
 .txtimg {
     width: 40vw;
@@ -113,8 +116,23 @@ section h2 {
 /* VERSION MOBILE UNIQUEMENT */
 
 @media only screen and (max-width: 768px) {
+    
     /* Global */
 
+    header {
+        background-color: #593500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5vw;
+    }
+    #logo {
+        height: 8vh;
+        margin: 1.5vw 0;
+    }
+    #cartLogo {
+        height: 6vh;
+    }
     nav {
         display: flex;
         position: fixed;
@@ -129,7 +147,6 @@ section h2 {
         overflow: hidden;
         box-sizing: border-box;
         justify-content: space-between;
-        transform: translateX(-60vw);
         transition: transform 0.5s ease-in-out;
     }
     nav ul {
@@ -149,20 +166,18 @@ section h2 {
     nav .bouton {
         margin-bottom: 2vh;
     }
-    header {
-        display: flex;
-        justify-content: center;
-    }
-    #logo {
-        height: 15vw;
-        margin: 1.5vw 0;
-    }
     .separateur {
-        height: 2px;
+        height: 1px;
         width: 80%;
-        background-color: #593500;
         align-self: center;
-        margin: 0 -2vh;
+    }
+    nav .separateur {
+        background-color: #593500;
+        margin: -2vh 0;
+    }
+    footer .separateur {
+        background-color: white;
+        margin: 2vh 0;
     }
     #croixNav {
         align-self: flex-end;
@@ -174,18 +189,6 @@ section h2 {
     footer p {
         text-align: center;
     }
-    #shopLogo {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 5vw;
-        padding: 1vh;
-        border-radius: 6px;
-        background-color: #593500;
-    }
-    #shopLogo img {
-        height: 6vh;
-    }
     #shop {
         height: 100vh;
         width: 60vw;
@@ -195,7 +198,6 @@ section h2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        transform: translateX(60vw);
         transition: transform 0.5s ease-in-out;
     }
     #shop .bouton {
@@ -210,7 +212,9 @@ section h2 {
     #croixShop line {
         stroke: #593500;
     }
-
+    .burgerBouton:active line {
+        stroke: white;
+    }
     /* Index */ 
     
     #indexHeader {
@@ -222,6 +226,18 @@ section h2 {
         text-align: center;
         padding: 1em;
         padding-bottom: 2em;
+    }
+    #shopBouton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 5vw;
+        padding: 1vh;
+        border-radius: 6px;
+        background-color: #593500;
+    }
+    #shopBouton img {
+        height: 6vh;
     }
     #burgerBox {
         border-radius: 6px;
@@ -254,31 +270,85 @@ section h2 {
     #titre {
         margin-bottom: 5vh;
     }
+    #shopBouton:active {
+        box-shadow: inset 5px 5px 3px -3px black;
+    }
+    section:last-of-type + img {
+        width: auto;
+        margin: 5vh 0;
+    }
     
     /* Page Paniers */
+
     .panier {
         font-family: "True North";
+        font-size: 7vh;
         color: white;
-        stroke: #593500;
+        -webkit-text-stroke: 2px #593500;
+        text-align: center;
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
     }
-    section .panier:nth-child(2) {
+    section .panier:nth-child(2),
+    #S {
         background-image: url(../images/panier1.jpg);
-        background-size: cover;
-        background-position: center;
-    }
-    section .panier:nth-child(3) {
+        }
+    section .panier:nth-child(3),
+    #M {
         background-image: url(../images/panier2.jpg);
-        background-size: cover;
-        background-position: center;
-    }
-    section .panier:nth-child(4)  {
+        }
+    section .panier:nth-child(4),
+    #L  {
         background-image: url(../images/panier3.jpg);
-        background-size: cover;
-        background-position: center;
+        }
+    section .panier:nth-child(5),
+    #XL  {
+        background-image: url(../images/panier4.jpg);
+        }
+    .panier:active {
+        background-size: 120vw;
     }
-    section .panier:nth-child(5)  {
-        background-image: url(../images/panier4jpg);
-        background-size: cover;
+    #paniers {
+        display: flex;
+        margin-bottom: -5vh;
+    }
+
+    /* Pages produits */
+
+    .produit {
         background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 30vh;
+        margin: 3vh 0;
+    }
+    .backBouton {
+        position: absolute;
+        margin: 2vh;
+    }
+    .backBouton:active svg circle {
+        fill: #593500;
+    }
+    .backBouton:active svg path {
+        fill: #96C11F;
+    }
+
+    /* Page Présentation */
+
+    #enteteAboutUs {
+        background-image: url(../images/terrain.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 25vh;
+    }
+    #stand {
+        background-image: url(../images/stand2.jpg);
+        float: right;
+        margin: 3vw 0 3vw 3vw;
+        width: 30vw;
     }
 }

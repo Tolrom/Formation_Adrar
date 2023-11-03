@@ -1,38 +1,32 @@
 const body = document.querySelector('body'),
-    burger = document.querySelector('#burgerBox'),
+    burger = document.querySelector('.burgerBouton'),
+    shopBouton = document.querySelector('.cartBouton'),
     nav = document.querySelector('nav'),
     shop = document.querySelector('#shop'),
-    shopBouton = document.querySelector('#shopLogo'),
     croixNav = document.querySelector('#croixNav'),
     croixShop = document.querySelector('#croixShop');
 
-let compteNav = false,
-    compteShop = false;
 
+// OUVERTURE PANIER / NAV
 burger.addEventListener('click', () => {
-    if (compteShop == false) {
+    if (shop.style.transform == 'translateX(60vw)') {
         nav.style.transform = 'translateX(0)';
         body.style.overflow = 'hidden';
-        compteNav = !compteNav;
+    }
+});
+shopBouton.addEventListener('click', () => {
+    if (nav.style.transform == 'translateX(-60vw)') {
+        shop.style.transform = 'translateX(0)';
+        body.style.overflow = 'hidden';
     }
 });
 
+// FERMETURE PANIER / NAV
 croixNav.addEventListener('click', () => {
     nav.style.transform = 'translateX(-60vw)';
     body.style.overflow = 'scroll';
-    compteNav = !compteNav;
 });
-
 croixShop.addEventListener('click', () => {
         shop.style.transform = 'translateX(60vw)';
         body.style.overflow = 'scroll';
-        compteShop = !compteShop;
-});
-
-shopBouton.addEventListener('click', () => {
-    if (compteNav == false) {
-        shop.style.transform = 'translateX(0)';
-        body.style.overflow = 'hidden';
-        compteShop = !compteShop;
-    }
 });
