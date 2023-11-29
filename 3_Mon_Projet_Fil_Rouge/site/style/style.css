@@ -9,19 +9,13 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
 }
 body {
     font-family: Quando;
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
-    height: 100vh;
-    width: 100%;
-}
-p {
-    text-align: justify;
-    margin: 0 7vw;
-    font-size: 14px;
+    height: 100%;
+    /* overflow-x: hidden; */
 }
 .bouton {
     text-align: center;
@@ -38,6 +32,9 @@ p {
 nav ul li{
     list-style: none;
     text-decoration: none;
+}
+nav ul li a {        
+    color: #593500;
 }
 a {
     text-decoration: none;
@@ -72,12 +69,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     background-color: #593500;
     color: white;
     padding: 2em 0;
     text-align: center;
-    margin-top: 5vh;
 }
 footer p {
     font-size: small;
@@ -91,10 +86,6 @@ section {
 }
 article {
     display: inline;
-}
-section h2 {
-    margin: 1em 7vw;
-    font-size: 6vw;
 }
 .txtimg {
     width: 40vw;
@@ -119,6 +110,20 @@ section h2 {
     
     /* Global */
 
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    p {
+        text-align: justify;
+        margin: 0 7vw;
+        font-size: 14px;
+    }
+    #navPC {
+        display: none;
+    }
     header {
         background-color: #593500;
         display: flex;
@@ -129,9 +134,6 @@ section h2 {
     #logo {
         height: 8vh;
         margin: 1.5vw 0;
-    }
-    #cartLogo {
-        height: 6vh;
     }
     nav {
         display: flex;
@@ -156,9 +158,6 @@ section h2 {
         align-self: center;
         flex-grow: 6;
         font-weight: bold;
-    }
-    nav ul li a {        
-        color: #593500;
     }
     nav ul li:last-child {
         transform: translateY(-4vh);
@@ -217,6 +216,10 @@ section h2 {
     }
     /* Index */ 
     
+    section h2 {
+        margin: 1em 7vw;
+        font-size: 6vw;
+    }
     #indexHeader {
         background-image: url(../images/header.jpg);
         background-size: cover;
@@ -237,7 +240,7 @@ section h2 {
         background-color: #593500;
     }
     #shopBouton img {
-        height: 6vh;
+        height: 10vw;
     }
     #burgerBox {
         border-radius: 6px;
@@ -273,9 +276,10 @@ section h2 {
     #shopBouton:active {
         box-shadow: inset 5px 5px 3px -3px black;
     }
-    section:last-of-type + img {
-        width: auto;
-        margin: 5vh 0;
+    main section:last-of-type + img {
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: -1vh;
     }
     
     /* Page Paniers */
@@ -350,5 +354,102 @@ section h2 {
         float: right;
         margin: 3vw 0 3vw 3vw;
         width: 30vw;
+    }
+}
+
+/* VERSION PC UNIQUEMENT */
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        position: relative;
+        margin: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+    }
+    header,
+    #navPC,
+    ul,
+    li {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    #header {
+        height: 40vh;
+        background-image: url(../images/header.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    #papierHeader {
+        position: absolute;
+        top: -5vh;
+        z-index: 1;
+        width: 100%;
+    }
+    header .bouton {
+        position: absolute;
+        top: 40vh;
+        left: 42%;
+        width: 16%;
+    }
+    #shopBouton {
+        position: absolute;
+        right: 0;
+        margin: 1vw;
+        z-index: 5;
+    }
+    #shopBouton img {
+        height: 3em;
+    }
+    #navPC {
+        margin-top: 2vh;
+        width: 75%;
+        padding-right: 6vw;
+    }
+    #navPC ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    #burgerBox,
+    #shop,
+    #burgerBox + nav {
+        display: none;
+        margin: 0;
+    }
+    p span {
+        display: none;
+    }
+    section:last-of-type + img {
+        display: none;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr ;
+    }
+    main section {
+        background-size: cover;
+        background-position: center;
+        height: vh;
+    }
+    section:nth-child(odd) {
+        grid-column: 1;
+    }
+    section:nth-child(even) {
+        grid-column: 2;
+    }
+    section:nth-child(2) {
+        background-image: url(../images/image1.jpg);
+    }
+    section:nth-child(3) {
+        background-image: url(../images/image2.jpg);
+    }
+    section:nth-child(6) {
+        background-image: url(../images/image3.jpg);
+    }
+    section article {
+        padding: 2vh 2vw;
     }
 }
