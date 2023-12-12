@@ -124,6 +124,9 @@ article {
     #navPC {
         display: none;
     }
+    #papierHeader {
+        display: none;
+    }
     header {
         background-color: #593500;
         display: flex;
@@ -242,6 +245,9 @@ article {
     #shopBouton img {
         height: 10vw;
     }
+    #cartLogo {
+        height: 10vw;
+    }
     #burgerBox {
         border-radius: 6px;
         background: #593500;
@@ -318,7 +324,6 @@ article {
     }
     #paniers {
         display: flex;
-        margin-bottom: -5vh;
     }
 
     /* Pages produits */
@@ -339,6 +344,9 @@ article {
     }
     .backBouton:active svg path {
         fill: #96C11F;
+    }
+    .titreProduit .bouton {
+        margin-bottom: 1em;
     }
 
     /* Page Présentation */
@@ -394,14 +402,14 @@ article {
         left: 42%;
         width: 16%;
     }
-    #shopBouton {
+    /* .cartBouton {
         position: absolute;
         right: 0;
         margin: 1vw;
         z-index: 5;
-    }
-    #shopBouton img {
-        height: 3em;
+    } */
+    .cartBouton {
+        display: none;
     }
     #navPC {
         margin-top: 2vh;
