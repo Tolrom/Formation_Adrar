@@ -217,6 +217,11 @@ article {
     .burgerBouton:active line {
         stroke: white;
     }
+    .required::after {
+        content: "*";
+        color: red;
+    }
+
     /* Index */ 
     
     section h2 {
@@ -362,6 +367,33 @@ article {
         float: right;
         margin: 3vw 0 3vw 3vw;
         width: 30vw;
+    }
+
+    /*  Inscription / Connexion */
+
+    form {
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    form label {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        padding-left: 2%;
+    }
+    form input {
+        background-color: #96C11F;
+        border-radius: 10px;
+        border: 1px solid grey;
+        margin: 2% 0;
+        padding: 1%;
+        width: 50%;
+    }
+    form .bouton {
+        width: 80%;
     }
 }
 
