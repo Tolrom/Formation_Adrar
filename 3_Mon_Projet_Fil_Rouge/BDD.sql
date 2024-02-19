@@ -25,9 +25,11 @@ id_utilisateur int not null
 )Engine=InnoDB;
 CREATE TABLE produit(
 id_produit int primary key auto_increment not null,
-format_produit varchar(50) not null,
+nom_produit varchar(50) not null,
 prix_produit decimal(4,2) not null,
-stock_produit int not null
+stock_produit int not null,
+image_produit varchar(50) not null,
+description_produit text not null
 )Engine=InnoDB;
 CREATE TABLE relais(
 id_relais int primary key auto_increment not null,

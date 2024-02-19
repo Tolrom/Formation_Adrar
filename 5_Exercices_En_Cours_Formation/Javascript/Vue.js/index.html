@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body id="app">
+  <p>{{toto}}</p>
+    <h1 class="text-center">TaskList (VUE)</h1>
+    
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-body">
+                <p class="card-text">Ajouter des Task</p>
+                <!--la directive v-model, sur l'input va permettre de le Connecter à une variable JS -->
+                <input v-model="valeurDeInput" class="form-control" type="text" />
+                <!-- la directive v-on:click, sur le button permet de réagir au click et exécuter la fonction ajouterTask côté JS -->
+                <button v-on:click="ajouterTask" type="button" class="btn btn-primary mt-2">Ajouter</button>
+            </div>
+            <div class="card-footer text-muted">
+                <h5>Ma Liste</h5>
+                <ul>
+                    <!-- la directive v-for, sur la <li> va permettre de répéter l'affichage de <li> autant de fois que des data sont présentes dans le tableau tasks (côté JS)  -->
+                    <!-- cette syntaxe en double accolades {{uneTask}} permet d'afficher une variable(JS) directement -->
+                    <li v-for="uneTask in tasks">{{uneTask}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li v-for="prenom in prenoms">{{ prenom }}</li>
+    </ul>
+    <div>
+        <img v-for="image in images" :src="image.url" :alt="image.alt">
+    </div>
+    <p>{{ script }}</p>
+    <p>{{ obj }}</p>
+    <p>{{ afficherLivreRandom() }}</p>
+    <!-- script pour contacter VUE -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
