@@ -26,7 +26,18 @@ data(){
         card: 'card',
         verif1: false,
         verif2: false,
-        
+        colorDyn: '',
+        helloWorld: '',
+        classHello: false,
+        classWorld: false,
+        displayToggle: '',
+        films: [],
+        movieType: '',
+        textDisplay: 'Masquer le titre',
+        courses: [],
+        coursesType: '',
+        listDisplay: 'Masquer la liste',
+        displayToggleCourses: '',
     };
 },
 
@@ -93,6 +104,40 @@ methods: {
                 break;
         }
     },
+    display(){
+        if(this.displayToggle === ''){
+            this.displayToggle = 'hidden';
+            this.textDisplay = 'Afficher le titre';
+        }
+        else{
+            this.displayToggle = '';
+            this.textDisplay = 'Masquer le titre';
+        }
+    },
+    addMovie(){
+        this.films.push(this.movieType);
+        this.movieType = '';
+    },
+    deleteMovie(index){
+        this.films.splice(index, 1);
+    },
+    addCourses(){
+        this.courses.push(this.coursesType);
+        this.coursesType = '';
+    },
+    deleteCourses(index){
+        this.courses.splice(index, 1);
+    },
+    displayCourses(){
+        if(this.displayToggleCourses === ''){
+            this.displayToggleCourses = 'hidden';
+            this.listDisplay = 'Afficher la liste';
+        }
+        else{
+            this.displayToggleCourses = '';
+            this.listDisplay = 'Masquer la liste';
+        }
+    },
 },
 computed: {
     userNameTest2(){
@@ -124,6 +169,15 @@ watch: {
                 this.game.goal = Math.floor(Math.random()*100);
             }, 3000);
         }
+    },
+    helloWorld(value) {
+        if(value === 'hello'){
+            this.classHello = true;
+        }
+        if(value === 'world'){
+            this.classWorld = true;
+        }
     }
+
 },
 }).mount('#app');

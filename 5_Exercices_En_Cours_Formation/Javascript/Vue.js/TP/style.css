@@ -14,6 +14,7 @@ section {
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 2em;
 }
 h1 {
     margin: 1em 0;
@@ -88,4 +89,24 @@ article h2+h1 {
 }
 .class2 {
     background-color: chartreuse;
+}
+input[type="button"] {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: aquamarine;
+    font-weight: bold;
+    cursor: pointer;
+}
+.maClasseHello {
+    background-color: chartreuse;
+    font-family: Impact;
+}
+.maClasseWorld {
+    background-color: slateblue;
+    font-family: 'Comic Sans MS';
+    color: white;
+}
+li {
+    list-style-type: none;
+    cursor: pointer;
 }

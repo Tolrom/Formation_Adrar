@@ -90,6 +90,44 @@
                 </div>
             </article>
         </section>
+        <section>
+            <article>
+                <label>Entrez "hello" ou "world" ci-dessous</label>
+                <input type="text" v-model="helloWorld" >
+                <h1 :style="{visibility: displayToggle}" :class="{maClasseHello: classHello, maClasseWorld: classWorld}" >Graphics design is my passion</h1>
+                <label>Entrez la couleur désirée ci-dessous</label>
+                <input type="text" v-model="colorDyn">
+                <h1 :style="{color: colorDyn}">Graphics design is my passion</h1>
+                <input @click="display" type="button" :value="textDisplay">
+            </article>
+            <article>
+                <h1>Watchlist</h1>
+                <input type="text" v-model="movieType">
+                <input @click="addMovie" type="button" value="Ajouter à la liste">
+                <h2 v-if="!films[0] && movieType === ''">Veuillez ajouter des films à la liste!</h2>
+                <h2 v-else>{{ movieType }}</h2>
+                <ul>
+                    <li @click="deleteMovie(index)" v-for="(film, index) in films">
+                        {{ index }}
+                        {{ film }}
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h1>Liste de courses</h1>
+                <input type="text" v-model="coursesType">
+                <input @click="addCourses" type="button" value="Ajouter à la liste">
+                <h2 v-if="!courses[0] && coursesType === ''">Pas de courses?</h2>
+                <h2 v-else>{{ movieType }}</h2>
+                <ul :style="{visibility: displayToggleCourses}">
+                    <li @click="deleteCourses(index)" v-for="(item, index) in courses">
+                        {{ index }}
+                        {{ item }}
+                    </li>
+                </ul>
+                <input type="button" @click="displayCourses" :value="listDisplay">
+            </article>
+        </section>
     </main>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="app.js"></script>
