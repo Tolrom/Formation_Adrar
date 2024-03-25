@@ -1,0 +1,14 @@
+<section>
+    <article class="pokemon">
+        <h2>#{{ forme[0].pokedex_id }} {{ forme[0].name.fr }} </h2>
+        <div *ngIf="forme[0].types" class="types">
+            <img [src]="forme[0].types[0].image" alt="Illustration du type {{ forme[0].types[0].name }}" crossorigin>
+            <img *ngIf="forme[0].types[1]" [src]="forme[0].types[1].image" alt="Illustration du type {{ forme[0].types[1].name }}" crossorigin>
+        </div>
+        <img 
+        [src]="forme[0].sprites.regular" 
+        alt="Illustration de {{ forme[0].name.fr }}"
+        crossorigin />
+        <p>{{ forme[0].category }}</p>
+    </article>
+</section>

@@ -74,7 +74,7 @@ references commande(id_commande);
 
 
 INSERT INTO `produit`(`nom_produit`, `prix_produit`, `stock_produit`, `image_produit`, `description_produit`) 
-VALUES ('Panier S','10','100','./Public/asset/images/panier1.jpg','Un petit panier de légumes'),
-		('Panier M','15','100','./Public/asset/images/panier2.jpg','Un panier de légumes'),
-        ('Panier L','25','100','./Public/asset/images/panier3.jpg','Un gros panier de légumes'),
-        ('Panier XL','40','100','./Public/asset/images/panier4.jpg','Un énorme panier de légumes')
+VALUES ('Panier S','10','100','/leguman/Public/asset/images/panier1.jpg','Un petit panier de légumes'),
+		('Panier M','15','100','/leguman/Public/asset/images/panier2.jpg','Un panier de légumes'),
+        ('Panier L','25','100','/leguman/Public/asset/images/panier3.jpg','Un gros panier de légumes'),
+        ('Panier XL','40','100','/leguman/Public/asset/images/panier4.jpg','Un énorme panier de légumes')

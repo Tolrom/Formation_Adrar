@@ -1,0 +1,28 @@
+<section class="pokeApp">
+    <article class="pokemon">
+        <h2>#{{ pokemon.pokedex_id }} {{ pokemon.name.fr }} </h2>
+        <div *ngIf="pokemon.types" class="types">
+            <img [src]="pokemon.types[0].image" alt="Illustration du type {{ pokemon.types[0].name }}" crossorigin>
+            <img *ngIf="pokemon.types[1]" [src]="pokemon.types[1].image" alt="Illustration du type {{ pokemon.types[1].name }}" crossorigin>
+        </div>
+        <img 
+        [src]="pokemon.sprites.regular" 
+        alt="Illustration de {{ pokemon.name.fr }}"
+        crossorigin />
+        <p>{{ pokemon.category }}</p>
+        <h4 *ngIf="pokemon.formes">Formes régionales :</h4>
+        <a *ngFor="let forme of pokemon.formes" [routerLink]="['/formes', pokemon.name.fr.toLowerCase(), forme.region]" class="btnForme">{{ forme.name.fr }}</a>
+    </article>
+    <article *ngFor="let mega of pokemon.evolution?.mega" class="pokemon">
+        <h2>Méga {{ pokemon.name.fr }} </h2>
+            <div *ngIf="pokemon.types" class="types">
+                <img [src]="pokemon.types[0].image" alt="Illustration du type {{ pokemon.types[0].name }}" crossorigin>
+                <img *ngIf="pokemon.types[1]" [src]="pokemon.types[1].image" alt="Illustration du type {{ pokemon.types[1].name }}" crossorigin>
+            </div>
+            <img 
+            [src]="mega.sprites.regular" 
+            alt="Illustration de méga {{ pokemon.name.fr }}"
+            crossorigin />
+            <p>{{ mega.orbe }}</p>
+    </article>
+</section>
