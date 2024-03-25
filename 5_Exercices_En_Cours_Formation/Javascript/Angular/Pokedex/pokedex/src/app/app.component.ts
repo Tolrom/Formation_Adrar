@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 @Component({
@@ -7,12 +7,13 @@ import { HomeComponent } from './home/home.component';
   standalone: true,
   imports: [
     HomeComponent,
-    RouterOutlet
+    RouterOutlet,
+    RouterModule,
   ],
   template: `
     <main>
       <header>
-      <h1>Pokédex</h1>
+      <h1><a [routerLink]="['/']" routerLinkActive="router-link-active" >Pokédex</a></h1>
       </header>
       <section>
         <router-outlet></router-outlet>

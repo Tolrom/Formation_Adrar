@@ -1,0 +1,28 @@
+.pokemon {
+    font-family: Helvetica;
+    width: 50%;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #464646;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.pokeApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pokemon img {
+    transition: all 0.05s ease-in-out;
+}
+.types {
+    display: flex;
+    justify-content: space-evenly;
+}
+.types img {
+    width: 2em;
+    height: 2em;
+    margin: 0 1em;
+}

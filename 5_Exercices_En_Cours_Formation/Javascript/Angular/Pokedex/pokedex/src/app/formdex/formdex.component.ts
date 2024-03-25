@@ -16,15 +16,13 @@ import { CommonModule } from '@angular/common';
 export class FormdexComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   pokedexService: PokedexService = inject(PokedexService);
-  forme!: Pokemon[] ;
+  forme!: Pokemon;
 
   constructor() {
     const pokemon = this.route.snapshot.params['pokemon'];
     const region = this.route.snapshot.params['region'];
-    this.pokedexService.getFormsByRegion(pokemon, region).then((forme) => {
-      console.log(forme);
+    this.pokedexService.getFormByRegion(pokemon, region).then((forme) => {
       this.forme = forme;
-      console.log(this.forme);
     });
   }
 }

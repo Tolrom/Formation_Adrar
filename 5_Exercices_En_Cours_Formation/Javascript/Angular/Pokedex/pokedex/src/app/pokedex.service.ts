@@ -11,7 +11,9 @@ export class PokedexService {
     const data = await fetch(`${this.url}/pokemon`);
     return (await data.json()) ?? [];
   }
-  async getFormsByRegion(pokemon: string, region: string): Promise<Pokemon[]> {
+  async getFormByRegion(pokemon: string, region: string): Promise<Pokemon> {
+    pokemon = pokemon.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    region = region.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const data = await fetch(`${this.url}/pokemon/${pokemon}/${region}`);
     return (await data.json()) ?? {};
   }

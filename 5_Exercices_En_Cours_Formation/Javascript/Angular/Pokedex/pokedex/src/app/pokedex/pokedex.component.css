@@ -17,10 +17,10 @@
 .pokemon img {
     height: 10em;
     width: 10em;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.05s ease-in-out;
 }
 .pokemon:hover>img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .btnForme {
     text-decoration: none;
@@ -30,6 +30,9 @@
     padding: 0.5em;
     margin-bottom: 0.5em;
     background-color: rgb(252, 160, 255);
+}
+.btnForme:hover {
+    background-color: rgb(225, 88, 230);
 }
 .types {
     display: flex;
