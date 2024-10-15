@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app">
+    <main>
+        <section>
+            <div @click="selectCard(1)" id="colorCard" :style="{ backgroundColor: color1}" class="card"><h5>Carte 1</h5></div>
+            <div @click="selectCard(3)" :class="{card: true, class1: verif1}"><h5>Carte 1bis</h5></div>
+            <h1>TP DataBinding - Profile User</h1>
+            <div @click="selectCard(4)" :class="{card: true, class2: verif2}"><h5>Carte 2bis</h5></div>
+            <div @click="selectCard(2)" id="colorCard" :style="{ backgroundColor: color2}" class="card"><h5>Carte 2</h5></div>
+        </section>
+        <section>
+            <article>
+                <img :src="user.image" alt="Image de profil">
+                <h4>
+                    {{ user.name }}
+                </h4>
+                <input v-model="user.name"  type="text">
+                <h4>
+                    {{ user.age }}
+                </h4>
+                <h4>
+                    age + 10 = {{ ageAdd() }}
+                </h4>
+                <h4>
+                    NB Fétiche : {{ user.num }}
+                </h4>
+            </article>
+
+            <article>
+                <h2>
+                    Calculette
+                </h2>
+                <h2>
+                    Le nombre : 
+                </h2>
+                <h1>
+                    {{ nombre }}
+                </h1>
+                <div id="calc">
+                    <button @click="downNumber" id="moins" class="buttonCalc">-</button>
+                    <button @click="upNumber" id="plus" class="buttonCalc">+</button>
+                </div>
+                <p>
+                    {{ userNameTest() }}
+                </p>
+                <p>
+                    {{ userNameTest2 }}
+                </p>
+            </article>
+
+            <article>
+                <input type="text" v-on:keyup="printKey($event)">
+                <p>
+                    {{ texte1 }}
+                </p>
+                <input type="text" v-on:keyup="printKeyEsc($event)">
+                <p>
+                    {{ texte2 }}
+                </p>
+                <button @click="alertGen" id="alerte">Alerte</button>
+            </article>
+            
+            <article>
+                <h2>
+                    Trouve le nombre
+                </h2>
+                <h2>
+                    Le nombre : 
+                </h2>
+                <h1 :style="chaudFroid()">
+                    {{ game.num }}
+                </h1>
+                <h2>
+                    Score : 
+                </h2>
+                <h1>
+                    {{ game.score }}
+                </h1>
+                <div id="calc">
+                    <button @click="game.num++ ; game.score++" id="plus" class="buttonCalc">+1</button>
+                    <p>{{ game.message }}</p>
+                    <button @click="game.num+=5 ; game.score++" id="plusse" class="buttonCalc">+5</button>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <label>Entrez "hello" ou "world" ci-dessous</label>
+                <input type="text" v-model="helloWorld" >
+                <h1 :style="{visibility: displayToggle}" :class="{maClasseHello: classHello, maClasseWorld: classWorld}" >Graphics design is my passion</h1>
+                <label>Entrez la couleur désirée ci-dessous</label>
+                <input type="text" v-model="colorDyn">
+                <h1 :style="{color: colorDyn}">Graphics design is my passion</h1>
+                <input @click="display" type="button" :value="textDisplay">
+            </article>
+            <article>
+                <h1>Watchlist</h1>
+                <input type="text" v-model="movieType">
+                <input @click="addMovie" type="button" value="Ajouter à la liste">
+                <h2 v-if="!films[0] && movieType === ''">Veuillez ajouter des films à la liste!</h2>
+                <h2 v-else>{{ movieType }}</h2>
+                <ul>
+                    <li @click="deleteMovie(index)" v-for="(film, index) in films">
+                        {{ index }}
+                        {{ film }}
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h1>Liste de courses</h1>
+                <input type="text" v-model="coursesType">
+                <input @click="addCourses" type="button" value="Ajouter à la liste">
+                <h2 v-if="!courses[0] && coursesType === ''">Pas de courses?</h2>
+                <h2 v-else>{{ movieType }}</h2>
+                <ul :style="{visibility: displayToggleCourses}">
+                    <li @click="deleteCourses(index)" v-for="(item, index) in courses">
+                        {{ index }}
+                        {{ item }}
+                    </li>
+                </ul>
+                <input type="button" @click="displayCourses" :value="listDisplay">
+            </article>
+        </section>
+    </main>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<section class="pokeApp" >
+    <article class="pokemon">
+        <h2>#{{ forme.pokedex_id }} {{ forme.name.fr }} </h2>
+        <div *ngIf="forme.types" class="types">
+            <img [src]="forme.types[0].image" alt="Illustration du type {{ forme.types[0].name }}" crossorigin>
+            <img *ngIf="forme.types[1]" [src]="forme.types[1].image" alt="Illustration du type {{ forme.types[1].name }}" crossorigin>
+        </div>
+        <img 
+        [src]="forme.sprites.regular" 
+        alt="Illustration de {{ forme.name.fr }}"
+        crossorigin />
+        <p>{{ forme.category }}</p>
+    </article>
+</section>

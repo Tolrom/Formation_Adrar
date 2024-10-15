@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+header {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+header a {
+    color: black;
+    font-size: 2em;
+    text-decoration: none;
+}

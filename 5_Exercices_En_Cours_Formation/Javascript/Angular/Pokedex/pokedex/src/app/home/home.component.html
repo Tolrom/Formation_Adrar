@@ -1,0 +1,12 @@
+<section>
+    <form >
+      <input type="search" placeholder="Filter by" #filter/>
+      <button class="primary" type="submit">Search</button>
+    </form>
+  </section>
+  <section class="pokedex">
+    <app-pokedex
+    *ngFor="let poke of pokedex"
+    [pokemon]="poke">
+  </app-pokedex>
+  </section>

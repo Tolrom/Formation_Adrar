@@ -1,0 +1,11 @@
+img {
+    max-width: 25%;
+}
+ul:last-of-type{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+li {
+    list-style: none;
+}

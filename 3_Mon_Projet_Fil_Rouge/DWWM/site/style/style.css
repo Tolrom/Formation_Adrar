@@ -1,0 +1,495 @@
+@font-face {
+    font-family: "True North";
+    src: url(../fonts/True-North.otf) format("opentype");
+}
+@font-face {
+    font-family: "Quando";
+    src: url(../fonts/Quando-Regular.ttf) format("truetype");
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: Quando;
+    box-sizing: border-box;
+    height: 100%;
+    /* overflow-x: hidden; */
+}
+.bouton {
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background-color: #593500;
+    color: #96C11F;
+    text-decoration: none;
+    font-family: True North;
+    font-size: large;
+    width: fit-content;
+    align-self: center;
+}
+nav ul li{
+    list-style: none;
+    text-decoration: none;
+}
+nav ul li a {        
+    color: #593500;
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2 {
+    font-family: True North;
+    text-decoration: none;
+    color: #96C11F;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h3 {
+    font-family: True North;
+    font-size: xx-large;
+    align-self: center;
+    margin-top: 2vh;
+}
+h1 {
+    color: #593500;
+    margin: 0;
+    font-size: xx-large;
+}
+h1 img  {
+    height: 0.75em;
+}
+footer {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #593500;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+}
+footer p {
+    font-size: small;
+}
+footer a {
+    color: #f39200;
+}
+section {
+    display: flex;
+    flex-direction: column;
+}
+article {
+    display: inline;
+}
+.txtimg {
+    width: 40vw;
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+}
+.img1 {
+    background-image: url(../images/image1.jpg);
+    float: right;
+    margin: 3vw 0 3vw 3vw;
+}
+.img2 {
+    background-image: url(../images/image2.jpg);
+    float: left;
+    margin: 3vw 3vw 3vw 0;
+}
+
+/* VERSION MOBILE UNIQUEMENT */
+
+@media only screen and (max-width: 768px) {
+    
+    /* Global */
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    p {
+        text-align: justify;
+        margin: 0 7vw;
+        font-size: 14px;
+    }
+    #navPC {
+        display: none;
+    }
+    #papierHeader {
+        display: none;
+    }
+    header {
+        background-color: #593500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5vw;
+    }
+    #logo {
+        height: 8vh;
+        margin: 1.5vw 0;
+    }
+    nav {
+        display: flex;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        min-height: 100vh;
+        background-color: #96C11F;
+        text-align: left;
+        flex-direction: column;
+        overflow: hidden;
+        box-sizing: border-box;
+        justify-content: space-between;
+        transition: transform 0.5s ease-in-out;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-self: center;
+        flex-grow: 6;
+        font-weight: bold;
+    }
+    nav ul li:last-child {
+        transform: translateY(-4vh);
+    }
+    nav .bouton {
+        margin-bottom: 2vh;
+    }
+    .separateur {
+        height: 1px;
+        width: 80%;
+        align-self: center;
+    }
+    nav .separateur {
+        background-color: #593500;
+        margin: -2vh 0;
+    }
+    footer .separateur {
+        background-color: white;
+        margin: 2vh 0;
+    }
+    #croixNav {
+        align-self: flex-end;
+        margin: 4vw 4vw 0 0;
+    }
+    #croixNav line {
+        stroke: #593500;
+    }
+    footer p {
+        text-align: center;
+    }
+    #shop {
+        height: 100vh;
+        width: 60vw;
+        position: fixed;
+        background-color: #96C11F;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: transform 0.5s ease-in-out;
+    }
+    #shop .bouton {
+        align-self: flex-start;
+        margin: 5vw;
+    }
+    #croixShop {
+        position: absolute;
+        top: 0;
+        margin: 4vw;
+    }
+    #croixShop line {
+        stroke: #593500;
+    }
+    .burgerBouton:active line {
+        stroke: white;
+    }
+    .required::after {
+        content: "*";
+        color: red;
+    }
+
+    /* Index */ 
+    
+    section h2 {
+        margin: 1em 7vw;
+        font-size: 6vw;
+    }
+    #indexHeader {
+        background-image: url(../images/header.jpg);
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 1em;
+        padding-bottom: 2em;
+    }
+    #shopBouton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 5vw;
+        padding: 1vh;
+        border-radius: 6px;
+        background-color: #593500;
+    }
+    #shopBouton img {
+        height: 10vw;
+    }
+    #cartLogo {
+        height: 10vw;
+    }
+    #burgerBox {
+        border-radius: 6px;
+        background: #593500;
+        width: 52px;
+        height: 36px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #burgerBox:active,
+    .bouton:active {
+        background-color: #96C11F;
+        color: #593500;
+    }
+    #burgerBox:active svg line {
+        color: #593500;
+        stroke: #593500;
+    }
+    #croixNav:active line,
+    #croixShop:active line,
+    nav ul li a:active {
+        stroke: white;
+        color: white;
+    }
+    #titre {
+        margin-bottom: 5vh;
+    }
+    #shopBouton:active {
+        box-shadow: inset 5px 5px 3px -3px black;
+    }
+    main section:last-of-type + img {
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: -1vh;
+    }
+    
+    /* Page Paniers */
+
+    .panier {
+        font-family: "True North";
+        font-size: 7vh;
+        color: white;
+        -webkit-text-stroke: 2px #593500;
+        text-align: center;
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+    }
+    section .panier:nth-child(2),
+    #S {
+        background-image: url(../images/panier1.jpg);
+        }
+    section .panier:nth-child(3),
+    #M {
+        background-image: url(../images/panier2.jpg);
+        }
+    section .panier:nth-child(4),
+    #L  {
+        background-image: url(../images/panier3.jpg);
+        }
+    section .panier:nth-child(5),
+    #XL  {
+        background-image: url(../images/panier4.jpg);
+        }
+    .panier:active {
+        background-size: 120vw;
+    }
+    #paniers {
+        display: flex;
+    }
+
+    /* Pages produits */
+
+    .produit {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 30vh;
+        margin: 3vh 0;
+    }
+    .backBouton {
+        position: absolute;
+        margin: 2vh;
+    }
+    .backBouton:active svg circle {
+        fill: #593500;
+    }
+    .backBouton:active svg path {
+        fill: #96C11F;
+    }
+    .titreProduit .bouton {
+        margin-bottom: 1em;
+    }
+
+    /* Page Présentation */
+
+    #enteteAboutUs {
+        background-image: url(../images/terrain.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 25vh;
+    }
+    #stand {
+        background-image: url(../images/stand2.jpg);
+        float: right;
+        margin: 3vw 0 3vw 3vw;
+        width: 30vw;
+    }
+
+    /*  Inscription / Connexion */
+
+    form {
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    form label {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        padding-left: 2%;
+    }
+    form input {
+        background-color: #96C11F;
+        border-radius: 10px;
+        border: 1px solid grey;
+        margin: 2% 0;
+        padding: 1%;
+        width: 50%;
+    }
+    form .bouton {
+        width: 80%;
+    }
+}
+
+/* VERSION PC UNIQUEMENT */
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        position: relative;
+        margin: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+    }
+    header,
+    #navPC,
+    ul,
+    li {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    #header {
+        height: 40vh;
+        background-image: url(../images/header.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    #papierHeader {
+        position: absolute;
+        top: -5vh;
+        z-index: 1;
+        width: 100%;
+    }
+    header .bouton {
+        position: absolute;
+        top: 40vh;
+        left: 42%;
+        width: 16%;
+    }
+    /* .cartBouton {
+        position: absolute;
+        right: 0;
+        margin: 1vw;
+        z-index: 5;
+    } */
+    .cartBouton {
+        display: none;
+    }
+    #navPC {
+        margin-top: 2vh;
+        width: 75%;
+        padding-right: 6vw;
+    }
+    #navPC ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    #burgerBox,
+    #shop,
+    #burgerBox + nav {
+        display: none;
+        margin: 0;
+    }
+    p span {
+        display: none;
+    }
+    section:last-of-type + img {
+        display: none;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr ;
+    }
+    main section {
+        background-size: cover;
+        background-position: center;
+        height: vh;
+    }
+    section:nth-child(odd) {
+        grid-column: 1;
+    }
+    section:nth-child(even) {
+        grid-column: 2;
+    }
+    section:nth-child(2) {
+        background-image: url(../images/image1.jpg);
+    }
+    section:nth-child(3) {
+        background-image: url(../images/image2.jpg);
+    }
+    section:nth-child(6) {
+        background-image: url(../images/image3.jpg);
+    }
+    section article {
+        padding: 2vh 2vw;
+    }
+}
