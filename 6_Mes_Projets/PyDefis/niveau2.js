@@ -668,7 +668,7 @@ console.log(vifdor);
 
 function ministere(){
     let nbrs = [];
-    let check = [0, 0, 0, 0, 0, ]
+    let check = [0, 0, 0, 0, 0,]
     for(let i = 64225 , j = 0 ; j < 3 ; i++){
         let carre = i*i;
         carre = carre.toString();
@@ -690,3 +690,65 @@ function ministere(){
 }
 
 console.log(ministere());
+
+// Méli-Mélo d'adresses
+
+function newton(entree){
+    const list = prompt('Entrer la liste ici');
+    let arrList = list.split(`\n`);
+    let arrEmpreintes = [];
+    arrList.forEach(adresse => {
+        let dico = {
+            a : 0,
+            b : 0,
+            c : 0,
+            d : 0,
+            e : 0,
+            f : 0,
+            g : 0,
+            h : 0,
+            i : 0,
+            j : 0,
+            k : 0,
+            k : 0,
+            l : 0,
+            m : 0,
+            n : 0,
+            o : 0,
+            p : 0,
+            q : 0,
+            r : 0,
+            s : 0,
+            t : 0,
+            u : 0,
+            v : 0,
+            w : 0,
+            x : 0,
+            y : 0,
+            z : 0,
+        }
+        let arrAdresse = adresse.split('');
+        arrAdresse.forEach(element => {
+            if(element in dico){
+                dico[element]++;
+            }
+        });
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let empreinte = '';
+        for(let i = 0 ; i < 26 ; i++){
+            let lettre = alphabet[i];
+            if(dico[lettre] > 0){
+                empreinte += dico[lettre] + lettre;
+            }
+        }
+        arrEmpreintes.push(empreinte);
+    });
+    arrEmpreintes.forEach(element => {
+        if(element == entree){
+            console.log('Mulder et Scully devront se rendre dans cette rue : '+arrList[arrEmpreintes.indexOf(element)]);
+        }
+    });
+}
+
+// newton("1a6e1g1i1l1m1n1o2r2s2u1y");
+

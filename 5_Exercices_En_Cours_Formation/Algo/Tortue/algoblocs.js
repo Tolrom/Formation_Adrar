@@ -1767,3 +1767,79 @@ for(let i = 0 ; i < 4 ; i++) {
     changeColor(color.red);
 }
 */
+
+/*
+// COURBE DU DRAGON
+// Initialisation
+setPos(200,300);
+setLineWidth(1);
+faceRight();
+changeColor(color.red)
+function dragon(n){
+    if(n == 0){
+        forward(5)
+    }
+    else{
+        left(45);
+        dragon(n-1);
+        right(90);
+        nogard(n-1);
+        left(45);
+    }
+    shiftColor(0.010);
+}
+function nogard(n){
+    if(n == 0){
+        forward(5)
+    }
+    else{
+        right(45);
+        dragon(n-1);
+        left(90);
+        nogard(n-1);
+        right(45);
+    }
+}
+
+// Réalisation
+dragon(10);
+*/
+
+/*
+// Initialisation
+setPos(0,0);
+setLineWidth(5);
+faceRight();
+changeColor(color.red)
+
+// Réalisation
+for(let i = 0 ; i < 600 ; i++){
+    forward(1000);
+    backward(1000);
+    shiftColor(0.00167);
+    faceDown();
+    forward(1);
+    faceRight();
+}
+*/
+
+// DISQUE
+// Initialisation
+setPos(500,300);
+setLineWidth(2);
+faceRight();
+changeColor(color.red)
+
+// Réalisation
+for(let i = 0 ; i < 720 ; i++){
+    // for(let i = 0 ; i < 250 ; i++){
+    //     forward(1);
+    //     // shiftColor(0.004);
+    // }
+    forward(250);
+    up();
+    backward(250);
+    down();
+    left(0.5);
+    shiftColor(0.001385);
+}
