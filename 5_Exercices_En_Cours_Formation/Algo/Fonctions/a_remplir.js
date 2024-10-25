@@ -219,8 +219,20 @@ function emptyTriangle3(h, c1, c2) {
 // *****
 function pacman(h, c1) {
 	let s = "";
-	s += "TODO";
-	
+	let H = h;
+	if(H%2 == 0){
+		H--;
+	}
+
+	for(let i = 0 ; i < Math.floor(h/2) ; i++){
+		s += fullLine(H, c1) +'\n';
+		H -= 2;
+	}
+	H = 1;
+	for(let i = 0 ; i < h/2 ; i++){
+		s += fullLine(H, c1) +'\n';
+		H += 2;
+	}
 	return s;
 }
 
@@ -235,8 +247,28 @@ function pacman(h, c1) {
 // *****
 function hourglass(h, c1, c2) {
 	let s = "";
-	s += "TODO";
-	
+	let H = h;
+	let v = 0;
+	if(H%2 == 0){
+		H--;
+	}
+
+	for(let i = 0 ; i < Math.floor(h/2) ; i++){
+		s += fullLine(v, c2);
+		s += fullLine(H, c1) +'\n';
+		H -= 2;
+		v++;
+	}
+	if(h%2 == 0){
+		v--;
+	}
+	H = 1;
+	for(let i = 0 ; i < h/2 ; i++){
+		s += fullLine(v, c2);
+		s += fullLine(H, c1) +'\n';
+		v--;
+		H += 2;
+	}
 	return s;
 }
 
@@ -251,7 +283,28 @@ function hourglass(h, c1, c2) {
 // --*
 function plus(w, c1, c2) {
 	let s = "";
-	s += "TODO";
+	let H = w;
+	if(H%2 == 0){
+		H--;
+	}
+	for(let i = 0 ; i < Math.floor(H/2) ; i++){
+		s += fullLine(Math.floor(H/2), c2);
+		if(w%2 == 0){
+			s += c1;
+		}
+		s += c1 + '\n';
+	}
+	if(w%2 == 0){
+		s += fullLine(w, c1) + '\n';
+	}
+	s += fullLine(w, c1) + '\n';
+	for(let i = 0 ; i < Math.floor(H/2) ; i++){
+		s += fullLine(Math.floor(H/2), c2);
+		if(w%2 == 0){
+			s += c1;
+		}
+		s += c1 + '\n';
+	}
 	return s;
 }
 
