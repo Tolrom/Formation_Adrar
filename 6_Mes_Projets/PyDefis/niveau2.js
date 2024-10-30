@@ -745,10 +745,157 @@ function newton(entree){
     });
     arrEmpreintes.forEach(element => {
         if(element == entree){
-            console.log('Mulder et Scully devront se rendre dans cette rue : '+arrList[arrEmpreintes.indexOf(element)]);
+            console.log('Mulder et Scully devront se rendre dans cette rue : ' + arrList[arrEmpreintes.indexOf(element)]);
         }
     });
 }
 
 // newton("1a6e1g1i1l1m1n1o2r2s2u1y");
 
+
+// Les victimes de Tooms 1/2
+
+function tooms1(){
+    let list = prompt('Entre la liste');
+    list = list.split('\n');
+    let tooms = '10, 12, 6, 9, 18.5, 22, 7, 4, 9, 10';
+    tooms = tooms.split(', ');
+    let resultat = 0;
+    list.forEach(element => {
+        element = element.split(' - ');
+        let index = element[0];
+        let rel = element[1].split(', ');
+        for(let i = 0 ; i < 10 ; i++){
+            rel[i] -= tooms[i];
+        };
+        if(rel.every(value => value === rel[0])){
+            resultat += parseInt(index);
+        }
+        console.log('Index : '+index+'\nRelevé : '+rel);
+    });
+    console.log('Résultat : '+resultat);
+}
+
+// tooms1();
+
+// Les hybrides (S01E09)
+
+function splitIntoChunks(str, chunkSize) {
+    const regex = new RegExp(`.{1,${chunkSize}}`, 'g');
+    return str.match(regex) || [];
+}
+
+function hybrides(){
+    let list = prompt('Entrer liste');
+    let A = '0001',
+        C = '0011',
+        G = '1100',
+        T = '1010';
+    list = list.split('\n');
+    let resultat = '';
+    list.forEach(function(adn) {
+        adn = adn.split(' : ');
+        let index = adn[0].split(' ');
+        index.shift();
+        adn.shift();
+        const sequences = splitIntoChunks(adn[0], 4);
+        let V = true;
+        sequences.forEach(function(seq) {
+            if(seq != A && seq != C && seq != G && seq != T && V){
+                resultat += `${index}, `;
+                V = false;
+            }
+        })
+    });    
+    console.log(resultat);
+};
+
+// hybrides();
+
+// Analyse de sequences 1/2
+
+function analyseSeq(){
+    let seq = prompt('Entrer la sequence à analyser').split('');
+    let resultat = 1;
+    seq.forEach(function(lettre) {
+        if(lettre == 'R' ||lettre == 'Y' ||lettre == 'K' ||lettre == 'M' || lettre == 'S' || lettre == 'W'){
+            resultat *= 2; 
+        }else if(lettre == 'B' ||lettre == 'D' ||lettre == 'H' ||lettre == 'V'){
+            resultat *= 3;
+        }else if(lettre == 'N'){
+            resultat *= 4;
+        };
+        resultat = resultat.toString();
+        if(resultat.length > 5){
+            resultat = resultat.slice(-5);
+        }
+        resultat = parseInt(resultat);
+    });
+    console.log(resultat);
+};
+
+// analyseSeq();
+
+// Analyse de sequences 2/2
+
+function analyseSeq2() {
+    // let data = 'NGKWAR\n\nAGAAAA\nGAUCAA\nAGUAAG\nUGGUAG\nUGUUAG\nGGUAAA\nAGGUAG\nCGGAAG\nGGGAAG';
+    let data = prompt('Entrer les données');
+    data = data.split('\r\n\r\n');
+    let motif = data.shift();
+    data = data[0].split('\r\n');
+    let resultat = 0;
+    data.forEach(function(seq){
+        let match = 0;
+        for(let i = 0 ; i < seq.length ; i++) {
+            if(motif[i] == 'N'){
+                match++;
+            }else if(motif[i] == seq[i]){
+                match++;
+            }else if(seq[i] == 'A'){
+                if(motif[i] == 'R' || motif[i] == 'M' || motif[i] == 'W' || motif[i] == 'D' || motif[i] == 'H' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'C'){
+                if(motif[i] == 'Y' || motif[i] == 'M' || motif[i] == 'S' || motif[i] == 'B' || motif[i] == 'H' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'G'){
+                if(motif[i] == 'R' || motif[i] == 'K' || motif[i] == 'S' || motif[i] == 'B' || motif[i] == 'D' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'U'){
+                if(motif[i] == 'Y' || motif[i] == 'K' || motif[i] == 'W' || motif[i] == 'B' || motif[i] == 'D' || motif[i] == 'H'){
+                    match++;
+                }
+            }
+        }
+        if(match == seq.length){
+            resultat++;
+        }
+    });
+    console.log(resultat);
+}
+
+// analyseSeq2();
+
+// Entrée au ministère
+
+function containsNumbers(arr,check){
+    return check.every(num => arr.includes(num));
+};
+
+function ministere2(){
+    const include = [1,2,4,6,7];
+    const exclude = [3,5,8,9];
+    for(let i = 64224 ; i < 65000 ; i++){
+        let carre = i*i;
+        carre = carre.toString().split('');
+        if(containsNumbers(carre, include) && !containsNumbers(carre, exclude)){
+            console.log(i);
+        }
+    }
+}
+
+// ministere2();
+console.log(containsNumbers([7,4,4,2,2,1,6],[1,2,4,6,7]));
