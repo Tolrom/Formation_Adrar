@@ -882,20 +882,87 @@ function analyseSeq2() {
 // Entrée au ministère
 
 function containsNumbers(arr,check){
-    return check.every(num => arr.includes(num));
+    return check.every(num => arr.includes(num.toString()));
 };
+function excludesNumbers(arr, check){
+    let result = true;
+    check.forEach(function(num){
+        if(arr.includes(num.toString())){
+            result = false;
+        }
+    })
+    return result;
+}
 
-function ministere2(){
+function ministere2(d,f){
     const include = [1,2,4,6,7];
-    const exclude = [3,5,8,9];
-    for(let i = 64224 ; i < 65000 ; i++){
+    const exclude = [0,3,5,8,9];
+    for(let i = d ; i < f ; i++){
         let carre = i*i;
         carre = carre.toString().split('');
-        if(containsNumbers(carre, include) && !containsNumbers(carre, exclude)){
+        // console.log(`Le carré : ${carre} \n ${containsNumbers(carre, include)} \n ${excludesNumbers(carre, exclude)}`);
+        if(containsNumbers(carre, include) && (excludesNumbers(carre, exclude))){
             console.log(i);
-        }
+        };
     }
 }
 
-// ministere2();
-console.log(containsNumbers([7,4,4,2,2,1,6],[1,2,4,6,7]));
+// ministere2(64224,100000);
+
+// Vous parlez Fourchelangue?
+
+function fourchelangue(entree){
+    let fourche = [];
+    let phrase = '';
+    const alpha = {
+        'HFH' : 'A',
+        'FFH' : 'B',
+        'SHS' : 'C',
+        'SHH' : 'D',
+        'SSH' : 'E',
+        'FHF' : 'F',
+        'FSS' : 'G',
+        'HFF' : 'H',
+        'HHH' : '[I/J]',
+        'SFS' : 'K',
+        'FFS' : 'L',
+        'FHS' : 'M',
+        'SSF' : 'N',
+        'FHH' : 'O',
+        'HHF' : 'P',
+        'SFF' : 'Q',
+        'FSF' : 'R',
+        'FSH' : 'S',
+        'HHS' : 'T',
+        'FFF' : '[U/V]',
+        'SSS' : 'W',
+        'HFS' : 'X',
+        'SHF' : 'Y',
+        'SFH' : 'Z',
+        'HS' : ' ',
+    }
+    entree = entree.split('');
+    while(entree.length > 0){
+        let syl = 3;
+        console.log(entree);
+        if(entree[0] == 'H' && entree[1] == 'S'){
+            syl = 2;
+        }
+        let lettre = '';
+        for(let j = 0 ; j < syl ; j++){
+            lettre += entree.shift();
+        }
+        fourche.push(lettre);
+    }
+    console.log(fourche);
+    fourche.forEach(function(syllabe){
+        phrase += alpha[syllabe];
+    })
+    console.log(phrase);
+}
+
+// fourchelangue('FHSFHHSSFHSSHSHFFSSHFSFHSSSFHFHFSSFFFHHHSSFHHHHSSHHSSHFHSHFHHHHSSFHSSSHFSHHHSHSFFFSSFHSFSSFSFHFHSSFSHHHSHHHFHHFFFFSFHSHHFFHHFFFFSFHSSSFFHHFFFFSHHSSHSHFHFSFHSSSFFHHFFFFSHHSHFHFFSFFSFHHSSFFSHHSSSHSSFFHFHHHSSFHSHHFFHHFFFFFFFHHHHHFSFHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFHSSHHSSHHSSHSSSHFSHHSHHSFSFFHHHHHFSHHSHHHFSSSSFFHHFFHFFSSSHFSHHSHHSFSFHFHHHHHHSFSFSSHFSHHSSSHHHSHSFFSFHHFSFFSHSFFFFFSSHHSHHSHFFSSHFHHSHHHFHFSFSHHHSHFHFFSHFHFSHHHSFHHFSFHSSSHHHSHSSHSFHHFSFFHSHFHSHSHSSSFSSHHSSSFFHHFFFFSHHSFSSSSHSSFSSHFSFFHHSSFHHSHSHHFFFSFFFFSHHSSSFFHHFFFFSHHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFFHHSSFFSHHSSHHSSHFSHHSHFHFFFHHSFSFSSHFSH');
+
+
+// James n'a pas de tête
+
