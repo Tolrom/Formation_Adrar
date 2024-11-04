@@ -668,7 +668,7 @@ console.log(vifdor);
 
 function ministere(){
     let nbrs = [];
-    let check = [0, 0, 0, 0, 0, ]
+    let check = [0, 0, 0, 0, 0,]
     for(let i = 64225 , j = 0 ; j < 3 ; i++){
         let carre = i*i;
         carre = carre.toString();
@@ -690,3 +690,279 @@ function ministere(){
 }
 
 console.log(ministere());
+
+// Méli-Mélo d'adresses
+
+function newton(entree){
+    const list = prompt('Entrer la liste ici');
+    let arrList = list.split(`\n`);
+    let arrEmpreintes = [];
+    arrList.forEach(adresse => {
+        let dico = {
+            a : 0,
+            b : 0,
+            c : 0,
+            d : 0,
+            e : 0,
+            f : 0,
+            g : 0,
+            h : 0,
+            i : 0,
+            j : 0,
+            k : 0,
+            k : 0,
+            l : 0,
+            m : 0,
+            n : 0,
+            o : 0,
+            p : 0,
+            q : 0,
+            r : 0,
+            s : 0,
+            t : 0,
+            u : 0,
+            v : 0,
+            w : 0,
+            x : 0,
+            y : 0,
+            z : 0,
+        }
+        let arrAdresse = adresse.split('');
+        arrAdresse.forEach(element => {
+            if(element in dico){
+                dico[element]++;
+            }
+        });
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let empreinte = '';
+        for(let i = 0 ; i < 26 ; i++){
+            let lettre = alphabet[i];
+            if(dico[lettre] > 0){
+                empreinte += dico[lettre] + lettre;
+            }
+        }
+        arrEmpreintes.push(empreinte);
+    });
+    arrEmpreintes.forEach(element => {
+        if(element == entree){
+            console.log('Mulder et Scully devront se rendre dans cette rue : ' + arrList[arrEmpreintes.indexOf(element)]);
+        }
+    });
+}
+
+// newton("1a6e1g1i1l1m1n1o2r2s2u1y");
+
+
+// Les victimes de Tooms 1/2
+
+function tooms1(){
+    let list = prompt('Entre la liste');
+    list = list.split('\n');
+    let tooms = '10, 12, 6, 9, 18.5, 22, 7, 4, 9, 10';
+    tooms = tooms.split(', ');
+    let resultat = 0;
+    list.forEach(element => {
+        element = element.split(' - ');
+        let index = element[0];
+        let rel = element[1].split(', ');
+        for(let i = 0 ; i < 10 ; i++){
+            rel[i] -= tooms[i];
+        };
+        if(rel.every(value => value === rel[0])){
+            resultat += parseInt(index);
+        }
+        console.log('Index : '+index+'\nRelevé : '+rel);
+    });
+    console.log('Résultat : '+resultat);
+}
+
+// tooms1();
+
+// Les hybrides (S01E09)
+
+function splitIntoChunks(str, chunkSize) {
+    const regex = new RegExp(`.{1,${chunkSize}}`, 'g');
+    return str.match(regex) || [];
+}
+
+function hybrides(){
+    let list = prompt('Entrer liste');
+    let A = '0001',
+        C = '0011',
+        G = '1100',
+        T = '1010';
+    list = list.split('\n');
+    let resultat = '';
+    list.forEach(function(adn) {
+        adn = adn.split(' : ');
+        let index = adn[0].split(' ');
+        index.shift();
+        adn.shift();
+        const sequences = splitIntoChunks(adn[0], 4);
+        let V = true;
+        sequences.forEach(function(seq) {
+            if(seq != A && seq != C && seq != G && seq != T && V){
+                resultat += `${index}, `;
+                V = false;
+            }
+        })
+    });    
+    console.log(resultat);
+};
+
+// hybrides();
+
+// Analyse de sequences 1/2
+
+function analyseSeq(){
+    let seq = prompt('Entrer la sequence à analyser').split('');
+    let resultat = 1;
+    seq.forEach(function(lettre) {
+        if(lettre == 'R' ||lettre == 'Y' ||lettre == 'K' ||lettre == 'M' || lettre == 'S' || lettre == 'W'){
+            resultat *= 2; 
+        }else if(lettre == 'B' ||lettre == 'D' ||lettre == 'H' ||lettre == 'V'){
+            resultat *= 3;
+        }else if(lettre == 'N'){
+            resultat *= 4;
+        };
+        resultat = resultat.toString();
+        if(resultat.length > 5){
+            resultat = resultat.slice(-5);
+        }
+        resultat = parseInt(resultat);
+    });
+    console.log(resultat);
+};
+
+// analyseSeq();
+
+// Analyse de sequences 2/2
+
+function analyseSeq2() {
+    // let data = 'NGKWAR\n\nAGAAAA\nGAUCAA\nAGUAAG\nUGGUAG\nUGUUAG\nGGUAAA\nAGGUAG\nCGGAAG\nGGGAAG';
+    let data = prompt('Entrer les données');
+    data = data.split('\r\n\r\n');
+    let motif = data.shift();
+    data = data[0].split('\r\n');
+    let resultat = 0;
+    data.forEach(function(seq){
+        let match = 0;
+        for(let i = 0 ; i < seq.length ; i++) {
+            if(motif[i] == 'N'){
+                match++;
+            }else if(motif[i] == seq[i]){
+                match++;
+            }else if(seq[i] == 'A'){
+                if(motif[i] == 'R' || motif[i] == 'M' || motif[i] == 'W' || motif[i] == 'D' || motif[i] == 'H' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'C'){
+                if(motif[i] == 'Y' || motif[i] == 'M' || motif[i] == 'S' || motif[i] == 'B' || motif[i] == 'H' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'G'){
+                if(motif[i] == 'R' || motif[i] == 'K' || motif[i] == 'S' || motif[i] == 'B' || motif[i] == 'D' || motif[i] == 'V'){
+                    match++;
+                }
+            }else if(seq[i] == 'U'){
+                if(motif[i] == 'Y' || motif[i] == 'K' || motif[i] == 'W' || motif[i] == 'B' || motif[i] == 'D' || motif[i] == 'H'){
+                    match++;
+                }
+            }
+        }
+        if(match == seq.length){
+            resultat++;
+        }
+    });
+    console.log(resultat);
+}
+
+// analyseSeq2();
+
+// Entrée au ministère
+
+function containsNumbers(arr,check){
+    return check.every(num => arr.includes(num.toString()));
+};
+function excludesNumbers(arr, check){
+    let result = true;
+    check.forEach(function(num){
+        if(arr.includes(num.toString())){
+            result = false;
+        }
+    })
+    return result;
+}
+
+function ministere2(d,f){
+    const include = [1,2,4,6,7];
+    const exclude = [0,3,5,8,9];
+    for(let i = d ; i < f ; i++){
+        let carre = i*i;
+        carre = carre.toString().split('');
+        // console.log(`Le carré : ${carre} \n ${containsNumbers(carre, include)} \n ${excludesNumbers(carre, exclude)}`);
+        if(containsNumbers(carre, include) && (excludesNumbers(carre, exclude))){
+            console.log(i);
+        };
+    }
+}
+
+// ministere2(64224,100000);
+
+// Vous parlez Fourchelangue?
+
+function fourchelangue(entree){
+    let fourche = [];
+    let phrase = '';
+    const alpha = {
+        'HFH' : 'A',
+        'FFH' : 'B',
+        'SHS' : 'C',
+        'SHH' : 'D',
+        'SSH' : 'E',
+        'FHF' : 'F',
+        'FSS' : 'G',
+        'HFF' : 'H',
+        'HHH' : '[I/J]',
+        'SFS' : 'K',
+        'FFS' : 'L',
+        'FHS' : 'M',
+        'SSF' : 'N',
+        'FHH' : 'O',
+        'HHF' : 'P',
+        'SFF' : 'Q',
+        'FSF' : 'R',
+        'FSH' : 'S',
+        'HHS' : 'T',
+        'FFF' : '[U/V]',
+        'SSS' : 'W',
+        'HFS' : 'X',
+        'SHF' : 'Y',
+        'SFH' : 'Z',
+        'HS' : ' ',
+    }
+    entree = entree.split('');
+    while(entree.length > 0){
+        let syl = 3;
+        console.log(entree);
+        if(entree[0] == 'H' && entree[1] == 'S'){
+            syl = 2;
+        }
+        let lettre = '';
+        for(let j = 0 ; j < syl ; j++){
+            lettre += entree.shift();
+        }
+        fourche.push(lettre);
+    }
+    console.log(fourche);
+    fourche.forEach(function(syllabe){
+        phrase += alpha[syllabe];
+    })
+    console.log(phrase);
+}
+
+// fourchelangue('FHSFHHSSFHSSHSHFFSSHFSFHSSSFHFHFSSFFFHHHSSFHHHHSSHHSSHFHSHFHHHHSSFHSSSHFSHHHSHSFFFSSFHSFSSFSFHFHSSFSHHHSHHHFHHFFFFSFHSHHFFHHFFFFSFHSSSFFHHFFFFSHHSSHSHFHFSFHSSSFFHHFFFFSHHSHFHFFSFFSFHHSSFFSHHSSSHSSFFHFHHHSSFHSHHFFHHFFFFFFFHHHHHFSFHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFHSSHHSSHHSSHSSSHFSHHSHHSFSFFHHHHHFSHHSHHHFSSSSFFHHFFHFFSSSHFSHHSHHSFSFHFHHHHHHSFSFSSHFSHHSSSHHHSHSFFSFHHFSFFSHSFFFFFSSHHSHHSHFFSSHFHHSHHHFHFSFSHHHSHFHFFSHFHFSHHHSFHHFSFHSSSHHHSHSSHSFHHFSFFHSHFHSHSHSSSFSSHHSSSFFHHFFFFSHHSFSSSSHSSFSSHFSFFHHSSFHHSHSHHFFFSFFFFSHHSSSFFHHFFFFSHHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFFHHSSFFSHHSSHHSSHFSHHSHFHFFFHHSFSFSSHFSH');
+
+
+// James n'a pas de tête
+

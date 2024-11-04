@@ -1,0 +1,218 @@
+avenue de bouvines mont-saint-aignan
+avenue de bouvines sedan
+avenue de lamandier plaisir
+avenue de marlioz alfortville
+avenue de marlioz fontaine
+avenue de marlioz grigny
+avenue de marlioz toulouse
+avenue de provence cergy
+avenue de provence cognac
+avenue de provence strasbourg
+avenue des pres fontaine
+avenue des tuileries gennevilliers
+avenue des tuileries nancy
+avenue des tuileries nimes
+avenue ferdinand de lesseps saint-etienne-du-rouvray
+avenue jean portalis auxerre
+avenue jean portalis cannes-la-bocca
+avenue jules ferry soissons
+avenue voltaire maisons-alfort
+avenue voltaire toulouse
+boulevard albin durand vallauris
+boulevard albin durand vandoeuvre-les-nancy
+boulevard amiral courbet clermont-ferrand
+boulevard amiral courbet ermont
+boulevard amiral courbet lyon
+boulevard amiral courbet muret
+boulevard aristide briand alencon
+boulevard aristide briand le port
+boulevard aristide briand noumea
+boulevard aristide briand saint-andre
+boulevard aristide briand taverny
+boulevard aristide briand villeneuve-saint-georges
+boulevard bryas chatenay-malabry
+boulevard bryas orleans
+boulevard dalsace maisons-laffitte
+boulevard dalsace paris
+boulevard dalsace sainte-foy-les-lyon
+boulevard de la liberation valence
+boulevard de normandie bastia
+boulevard de normandie cayenne
+boulevard de normandie le grand-quevilly
+boulevard de normandie rouen
+boulevard de prague alfortville
+boulevard de prague grigny
+boulevard de prague rouen
+chemin des bateliers baie-mahault
+chemin des bateliers nice
+chemin des bateliers perpignan
+chemin du lavarin sud belfort
+cours franklin roosevelt millau
+cours franklin roosevelt montreuil
+cours jean jaures lyon
+cours jean jaures rambouillet
+cours jean jaures saint-raphael
+cours marechal-joffre maubeuge
+cours marechal-joffre montfermeil
+faubourg saint honore dammarie-les-lys
+faubourg saint honore saint-benoit
+place charles de gaulle laval
+place charles de gaulle lens
+place de la gare marseille
+place de la gare rennes
+place de la madeleine paris
+place de miremont asnieres-sur-seine
+place de miremont bagneux
+place de miremont sainte-marie
+place de miremont villeneuve-saint-georges
+place maurice-charretier compiegne
+place maurice-charretier joue-les-tours
+place maurice-charretier narbonne
+place napoleon annemasse
+place napoleon vitry-sur-seine
+place stanislas concarneau
+place stanislas nantes
+place stanislas saint-die
+quai des belges dax
+quai des belges marseille
+quai des belges saint-maur-des-fosses
+quai saint-nicolas cannes
+quai saint-nicolas paris
+quai saint-nicolas toulouse
+route de lyon angers
+route de lyon evreux
+route de lyon roubaix
+rue adolphe wurtz chalon-sur-saone
+rue adolphe wurtz dunkerque
+rue banaudon aix-en-provence
+rue banaudon amiens
+rue banaudon dijon
+rue bonnet brive-la-gaillarde
+rue bonnet fort-de-france
+rue bonnet villeneuve-dascq
+rue bonneterie boulogne-billancourt
+rue bonneterie choisy-le-roi
+rue cazade perpignan
+rue cazade villeneuve-sur-lot
+rue charles corbeau montlucon
+rue charles corbeau nantes
+rue clement marot epinay-sur-seine
+rue clement marot fort-de-france
+rue clement marot le chesnay
+rue clement marot saint-chamond
+rue de geneve gradignan
+rue de geneve lyon
+rue de geneve montrouge
+rue de groussay illkirch-graffenstaden
+rue de la boetie le plessis-robinson
+rue de la hulotais cachan
+rue de la hulotais les abymes
+rue de la hulotais montrouge
+rue de la mare aux carats bordeaux
+rue de la mare aux carats fleury-les-aubrais
+rue de la mare aux carats pontoise
+rue de la republique la celle-saint-cloud
+rue de laigle gif-sur-yvette
+rue de laigle le grand-quevilly
+rue de lepeule rodez
+rue de lepeule saint-herblain
+rue de lepeule sartrouville
+rue de lepeule savigny-sur-orge
+rue de lepeule strasbourg
+rue de lille marseille
+rue de penthievre le bouscat
+rue de penthievre le perreux-sur-marne
+rue de penthievre noisy-le-grand
+rue de raymond poincare voiron
+rue de strasbourg clichy
+rue de strasbourg lormont
+rue de verdun champs-sur-marne
+rue de verdun pontoise
+rue des chaligny dammarie-les-lys
+rue des chaligny nice
+rue des chaligny trappes
+rue des coudriers boulogne-sur-mer
+rue des coudriers mulhouse
+rue des coudriers saint-martin-dheres
+rue des dunes la garenne-colombes
+rue des dunes villiers-le-bel
+rue des lacs herouville-saint-clair
+rue des lacs oyonnax
+rue des lieutemants thomazo haguenau
+rue des lieutemants thomazo vitrolles
+rue des nations unies laon
+rue des nations unies pessac
+rue des nations unies toulouse
+rue des six freres ruellan toulouse
+rue des soeurs bayonne
+rue des soeurs fontenay-aux-roses
+rue descartes le chesnay
+rue descartes nimes
+rue du chateau bordeaux
+rue du chateau colomiers
+rue du chateau marseille
+rue du chateau paris
+rue du faubourg national villeneuve-sur-lot
+rue du fosse des tanneurs saint-joseph
+rue du general ailleret saint-priest
+rue du general ailleret vesoul
+rue du gue jacquet meudon-la-foret
+rue du gue jacquet perigueux
+rue du gue jacquet verdun
+rue du limas antony
+rue du limas decines-charpieu
+rue du limas nice
+rue du palais meaux
+rue du palais montceau-les-mines
+rue du president roosevelt saint-denis
+rue du president roosevelt vaulx-en-velin
+rue ernest renan chaumont
+rue ernest renan la courneuve
+rue frederic chopin saint-herblain
+rue gontier-patin chatenay-malabry
+rue goya le mee-sur-seine
+rue goya lyon
+rue grande fusterie brive-la-gaillarde
+rue grande fusterie sarcelles
+rue hubert de lisle franconville-la-garenne
+rue isambard bayonne
+rue isambard frejus
+rue isambard le creusot
+rue jean vilar charleville-mezieres
+rue jean vilar pontoise
+rue joseph vernet baie-mahault
+rue joseph vernet bourgoin-jallieu
+rue joseph vernet verdun
+rue joseph vernet villeneuve-dascq
+rue lenotre dijon
+rue lenotre sedan
+rue leon dierx ajaccio
+rue marguerite orly
+rue marguerite oullins
+rue marie de medicis bagneux
+rue marie de medicis bordeaux
+rue marie de medicis cannes
+rue marie de medicis toulouse
+rue michel ange le havre
+rue petite fusterie dunkerque
+rue petite fusterie torcy
+rue pierre de coubertin la plaine-saint-denis
+rue pierre de coubertin metz
+rue pierre de coubertin villiers-sur-marne
+rue pierre motte issy-les-moulineaux
+rue pierre motte meudon-la-foret
+rue pierre motte saint-die
+rue porte dorange tremblay-en-france
+rue reine elisabeth antibes
+rue roussy begles
+rue sadi carnot choisy-le-roi
+rue sadi carnot lomme
+rue saint germain antibes
+rue saint germain hyeres
+rue saint germain millau
+rue sebastopol auch
+rue st ferreol garges-les-gonesse
+rue st ferreol rouen
+rue victor hugo cannes
+rue victor hugo chatellerault
+square de la couronne chartres
