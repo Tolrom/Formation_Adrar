@@ -7,7 +7,24 @@
     <title>Vite App</title>
   </head>
   <body>
+    <div id="scrollbar"></div>
+    <textarea id="storageText"></textarea>
+    <div id="liens">
+      <a href="#" id="add">Add</a>
+      <a href="#" id="rm">Remove</a>
+      <a href="#" id="tog">Toggle</a>
+      <input type="number" placeholder="Nombre de pokemon à récupérer" id="pokeNum">
+      <input type="submit" value="Envoyer" id="pokeSend">
+      <ul id="poke"></ul>
+    </div>
+    <h3 id="formLink"></h3>
+    <form>
+      <textarea name="" id="box"></textarea>
+      <input type="submit" name="" id="send">
+    </form>
     <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
