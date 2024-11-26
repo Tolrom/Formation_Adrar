@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+    <h1>Bibliothèque Municipale</h1>
+    <div>
+        <h2>Ajouter un livre à la bibliothèque</h2>
+        <label for="titre">Titre</label>
+        <input type="text" id="titre">
+        <label for="auteur">Auteur</label>
+        <input type="text" id="auteur">
+        <button id="ajouter">Ajouter</button>
+    </div>
+    <div>
+        <h2>Emprunter un livre</h2>
+        <label for="emprunt">Emprunter quel livre?</label>
+        <select name="">
+            <option value="">--Choisir le livre--</option>
+        </select>
+        <button id="emprunter">Emprunter</button>
+    </div>
+    
+    <div>
+        <h2>Rendre un livre</h2>
+        <label for="rendu">Rendre quel livre?</label>
+        <select name="">
+            <option value="">--Choisir le livre--</option>
+        </select>
+        <button id="rendre">Rendre</button>
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
