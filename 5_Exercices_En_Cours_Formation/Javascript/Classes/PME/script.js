@@ -62,6 +62,7 @@ class Employe {
         this.prenom = prenom;
         this.age = age;
         this.salaire = salaire;
+        this.cout = this.calculCout();
     }
 
 //!  Méthodes
@@ -71,6 +72,12 @@ class Employe {
      */
     calculCout(){
         return this.salaire * 12 * 1.9;
+    }
+    /**
+     * Méthode getter permettant de récuperer le cout annuel de l'employé
+     */
+    getCout(){
+        return this.cout;
     }
 }
 

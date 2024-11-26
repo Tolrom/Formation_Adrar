@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+form input {
+    height: 2em;
+}
+#submit {
+    cursor: pointer;
+    background-color: chartreuse;
+    text-align: center;
+    border-style: solid;
+    border-radius: 5px;
+}
+#submit:hover {
+    background-color: rgb(130, 243, 17);
+}
