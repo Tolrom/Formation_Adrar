@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Firebase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDTfHSNU5f5tLuTpZhJmI9vxB1WtjyHzok",
+          authDomain: "test-7f289.firebaseapp.com",
+          databaseURL: "https://test-7f289-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "test-7f289",
+          storageBucket: "test-7f289.firebasestorage.app",
+          messagingSenderId: "989488117879",
+          appId: "1:989488117879:web:7ecb54e3ad9e1cf95bae72",
+          measurementId: "G-RL4LJQY9P3"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
