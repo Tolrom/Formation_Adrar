@@ -4,13 +4,13 @@ USE judoka;
 -- Insertion des données
 INSERT INTO niveau (couleur_ceinture)
 VALUES
-	(blanche),
-	(jaune),
-	(orange),
-	(verte),
-	(bleue),
-	(marron),
-	(noire);
+	('blanche'),
+	('jaune'),
+	('orange'),
+	('verte'),
+	('bleue'),
+	('marron'),
+	('noire');
     
 INSERT INTO judoka (nom_judoka, prenom_judoka, age, sexe, id_niveau)
 VALUES
